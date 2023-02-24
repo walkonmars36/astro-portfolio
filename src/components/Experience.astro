@@ -1,0 +1,75 @@
+---
+const jobs = [
+  {
+    title: "Product Manager",
+    company: "Amazon",
+    timeRange: "2017-Present",
+    description:
+      "As a product manager at Amazon, I was responsible for the development and execution of the company's product roadmap. This included setting goals and objectives, defining features, and working with cross-functional teams to bring new products and updates to market.",
+  },
+  {
+    title: "Product Designer",
+    company: "Airbnb",
+    timeRange: "2014-2017",
+    description:
+      "As a product designer at Airbnb, I was responsible for designing and developing new products and features for the company. This included conducting user research, creating wireframes and prototypes, and working with cross-functional teams to bring my designs to life.",
+  },
+  {
+    title: "iOS Software Engineer",
+    company: "Facebook",
+    timeRange: "2012-2014",
+    description:
+      "As an iOS software engineer at Facebook, I was responsible for developing and maintaining the company's iOS app. This included designing and implementing new features, fixing bugs, and optimizing the app for performance and scalability.",
+  },
+];
+---
+
+<section
+  aria-labelledby=":rr:"
+  class="mx-auto max-w-5xl sm:px-6 sm:border-l sm:border-primary-700/40"
+>
+  <div class="grid grid-cols-1 gap-y-8 items-baseline md:grid-cols-4">
+    <h2
+      id=":rr:"
+      class="text-lg font-semibold tracking-tight sm:text-xl text-primary-100"
+    >
+      Experience
+    </h2>
+    <div class="md:col-span-3">
+      <ul role="list" class="space-y-16">
+        {
+          jobs.map((j) => (
+            <li class="flex flex-col items-start">
+              <>
+                <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+                  <div class="flex flex-col">
+                    <div class="flex flex-row gap-2 items-center">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src={`images/${j.company.toLowerCase()}.svg`}
+                        class="w-5 h-5 rounded-full ring-1 shadow-md shadow-primary-800/5 ring-primary-900"
+                      />
+                      <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                        {j.company}
+                      </h3>
+                    </div>
+
+                    <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                      {j.title}
+                    </h2>
+                  </div>
+                  <time class="text-sm text-primary-600">{j.timeRange}</time>
+                </div>
+
+                <p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+                  {j.description}
+                </p>
+              </>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

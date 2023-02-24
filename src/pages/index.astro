@@ -1,0 +1,50 @@
+---
+import Layout from "@layout/Layout.astro";
+
+import FeaturedBlogsContainer from "@components/FeaturedBlogsContainer.astro";
+import FeaturedBlogPost from "@components/FeaturedBlogPost.astro";
+import MainIntro from "@components/MainIntro.astro";
+import ContactForm from "@components/ContactForm.astro";
+import readingTime from "reading-time";
+
+const allPosts = await Astro.glob("./blog/*.md");
+
+const lastThreePosts = allPosts
+  .sort((a, b) => {
+    let dateA = new Date(a.frontmatter.pubDate),
+      dateB = new Date(b.frontmatter.pubDate);
+    if (dateA < dateB) return 1;
+    if (dateA > dateB) return -1;
+    return 0;
+  })
+  .slice(0, 3);
+---
+
+<Layout
+  pageTitle="Home"
+  description="I am Daniel, a startup founder based in San Francisco. I am the creator and current leader of DataScape , a data visualization and analysis tool that allows you to explore large datasets. "
+  type="website"
+>
+  <main class="flex flex-col gap-8 items-center px-8 mx-auto max-w-[75ch]">
+    <MainIntro />
+    <FeaturedBlogsContainer>
+      {
+        lastThreePosts.map((p) => (
+          <FeaturedBlogPost
+            date={new Date(p.frontmatter.pubDate).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+            readTime={readingTime(p.rawContent()).text}
+            title={p.frontmatter.title}
+            description={p.frontmatter.description}
+            tags={p.frontmatter.tags}
+            url={p.url}
+          />
+        ))
+      }
+    </FeaturedBlogsContainer>
+    <ContactForm />
+  </main>
+</Layout>

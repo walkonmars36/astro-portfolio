@@ -1,0 +1,68 @@
+---
+import ProjectsGrid from "@components/ProjectsGrid.astro";
+import Layout from "@layout/Layout.astro";
+
+const projects = [
+  {
+    name: "DataScape",
+    description:
+      "A data visualization and analysis tool that allows users to easily explore and understand large datasets.",
+    link: "https://github.com/something/something",
+  },
+  {
+    name: "CodeHub",
+    description:
+      "A collaborative code development platform that enables teams to work together on projects in real-time.",
+    link: "codehub.tech",
+  },
+  {
+    name: "SmartHome",
+    description:
+      "A home automation system that connects and controls various devices and appliances through a single intuitive app.",
+    link: "github.com",
+  },
+  {
+    name: "AI Assistant",
+    description:
+      "A virtual assistant that uses artificial intelligence to help users manage their daily tasks and schedule.",
+    link: "smartyaiassistant.dev",
+  },
+  {
+    name: "VirtualEvent",
+    description:
+      "A platform for hosting and attending virtual events, conferences, and meetings. It features a range of tools for networking, collaboration, and engagement.",
+    link: "github.com",
+  },
+  {
+    name: "CloudBoost",
+    description:
+      "A cloud-based platform that helps businesses optimize and accelerate their website performance.",
+    link: "cloudboost.tech",
+  },
+];
+---
+
+<Layout
+  pageTitle="Projects"
+  description="Things I’ve created to make the world around me a little different"
+  type="content"
+>
+  <main class="px-8 pt-16 mx-auto max-w-6xl sm:pt-24 lg:px-16">
+    <div class="flex flex-col mt-4 space-y-8">
+      <div class="flex flex-col space-y-4">
+        <h1
+          class="text-4xl font-bold tracking-tighter sm:text-5xl max-w-[25ch]"
+        >
+          Things I’ve created to make the world around me a little different
+        </h1>
+        <p class="text-primary-300 max-w-[65ch]">
+          I’ve worked on tons of little projects over the years but these are
+          the ones that I’m most proud of. Many of them are open-source, so if
+          you see something that piques your interest, check out the code and
+          contribute if you have ideas for how it can be improved.
+        </p>
+      </div>
+      <ProjectsGrid projects={projects} />
+    </div>
+  </main>
+</Layout>
