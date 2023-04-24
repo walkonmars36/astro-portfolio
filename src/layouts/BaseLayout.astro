@@ -1,4 +1,5 @@
 ---
+import "./node_modules/modern-css-reset/dist/reset.min.css";
 import "../styles/global.scss";
 
 import Header from "../components/Header.astro";
@@ -15,10 +16,6 @@ const { skillColor, fontWeight, textCase } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
       .skill {
         color: var(--skillColor);
         font-weight: var(--fontWeight);
