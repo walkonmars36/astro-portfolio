@@ -1,69 +1,47 @@
-# super-solstice blog
+# Astro Starter Kit: Minimal
 
-Super solstice is a meticulously crafted theme for astro using Tailwind that is SEO friendly.
-
-This theme follows best practices and provides accessibility out of the box. Light and dark mode are supported by default. Moreover, additional color schemes can also be configured.
-
-https://super-solstice.vercel.app/
-
-# ❤️‍🔥 Features
-
-- [x] super fast performance (top scores on ligthhouse)
-- [x] SEO friendly
-- [x] responsive
-- [x] accesible
-- [x] light and dark mode with customizable theme
-- [x] filters
-- [x] sitemap & rss feed
-- [x] customizable (edit variables in `Layout`)
-
-# 🤖 Tech stack
-
-Main Framework - Astro
-Type Checking - TypeScript
-JS framework - Vanilla JS
-Styling - TailwindCSS
-Icons - Iconoir
-Code Formatting - Rustwind & Prettier (`pnpm format`)
-Deployment - Vercel
-Illustrations & Content - Midjourney & ChatGPT
-
-# 🖥️ Running locally
-
-```sh
-pnpm install
-pnpm dev
+```
+npm create astro@latest -- --template minimal
 ```
 
-## Config for prod
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
-For the sitemap to work, define your URL in `astro.config.mjs`
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-```js
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+## 🚀 Project Structure
 
-export default defineConfig({
-  // ...
-  site: "https://stargazers.club",
-  integrations: [sitemap()],
-});
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-# Adding blog posts
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-Add markdown files similar to the ones in [blog/\*.md](src/pages/blog/), they need to have the following format:
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-```yaml
----
-layout: ../../layout/MarkdownLayout.astro
-title: My markdown capabilities
-description: "This is everything I know about markdown"
-pubDate: 2022-07-15
-tags: ["astro", "learning in public", "setbacks", "community"]
----
-```
+Any static assets, like images, can be placed in the `public/` directory.
 
-# Navigating this repo
+## 🧞 Commands
 
-I suggest going through [src/pages/](src/pages/) first then through [src/components/](src/components/), you can easily see where to make edits.
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
