@@ -2,8 +2,14 @@
 import "../styles/global.scss";
 ---
 
-<div class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-</div>
+<ul id="primary-navigation" data-visible="false" class="primary-navigation">
+  <li class="active"><a href="/">Home</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="/blog/">Blog</a></li>
+</ul>
+
+<style lang="scss">
+  .primary-navigation {
+    display: none;
+  }
+</style>

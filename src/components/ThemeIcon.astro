@@ -61,6 +61,8 @@
 
     const isDark = element.classList.contains("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    isDark ? element.classList.remove("light") : element.classList.add("light");
   };
 
   document
