@@ -17,16 +17,19 @@ html {
 }
 
 body {
-  margin: 0 auto;
   width: 100%;
   max-width: 80ch;
-  padding: 1rem;
   font-weight: 300;
 }
 
 h1 {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: var(--step-5);
+}
+
+h2 {
+  margin: 1rem 0;
+  font-size: var(--step-4);
 }
 
 ul {

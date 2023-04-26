@@ -2,7 +2,7 @@
 import HeroImage from "../components/HeroImage.astro";
 ---
 
-<section class="hero-image">
+<section class="container">
   <HeroImage />
   <h1>Hello 👋 <br />My Name's Mark</h1>
   <p>
@@ -18,11 +18,13 @@ import HeroImage from "../components/HeroImage.astro";
     text-align: center;
   }
 
-  h1 {
-    font-size: var(--step-5);
-  }
-
   a {
     text-decoration: none;
+  }
+
+  @media (max-width: 374px) {
+    h1 {
+      font-size: 2.2rem;
+    }
   }
 </style>
