@@ -1,0 +1,36 @@
+---
+import profileMobile from "/assets/images/image-profile-mobile.webp";
+
+import profileTablet from "/assets/images/image-profile-tablet.webp";
+
+import profileDesktop from "/assets/images/image-profile-desktop.webp";
+---
+
+<picture>
+  <source media="(max-width: 425px)" srcset={profileMobile} type="image/webp" />
+
+  <source
+    media="(min-width: 426px) and (max-width: 768px)"
+    srcset={profileTablet}
+    type="image/webp"
+  />
+
+  <source
+    media="(min-width: 769px)"
+    srcset={profileDesktop}
+    type="image/webp"
+  />
+
+  <img src={profileMobile} alt="Profile of Mark Lawson" />
+</picture>
+
+<style lang="scss">
+  @media (max-width: 425px) {
+    picture {
+      img {
+        width: 60%;
+        margin-inline: auto;
+      }
+    }
+  }
+</style>

@@ -1,8 +1,12 @@
 ---
-import "../styles/global.scss";
+import "../styles/_variables.scss";
 ---
 
-<ul id="primary-navigation" data-visible="false" class="primary-navigation">
+<ul
+  id="primary-navigation"
+  data-visible="false"
+  class="primary-navigation flex"
+>
   <li class="active"><a href="/">Home</a></li>
   <li><a href="/about/">About</a></li>
   <li><a href="/blog/">Blog</a></li>
@@ -10,6 +14,25 @@ import "../styles/global.scss";
 
 <style lang="scss">
   .primary-navigation {
-    display: none;
+    --gap: clamp(1.5rem, 5vw, 3.5rem);
+    flex-direction: column;
+    inset: 0 0 0 30%;
+    position: fixed;
+    background: hsl(228, 19%, 5% / 0.97);
+    padding: min(10rem, 15vh) 2rem;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform ease-out 0.5s;
+
+    &[data-visible="true"] {
+      transform: translateX(0);
+    }
+  }
+
+  @supports (backdrop-filter: blur(3rem)) {
+    .primary-navigation {
+      backdrop-filter: blur(3rem);
+      background: hsl(0 0% 100% / 0.05);
+    }
   }
 </style>

@@ -1,0 +1,10 @@
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+// Path: src/styles/_utilities.scss
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}

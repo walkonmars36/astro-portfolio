@@ -1,0 +1,29 @@
+---
+---
+
+<button
+  class="nav-toggle"
+  aria-controls="primary-navigation"
+  aria-label="Open Menu"
+  aria-expanded="false"
+>
+</button>
+
+<style>
+  .nav-toggle {
+    background: transparent;
+    background-image: url(/assets/icons/icon-hamburger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .nav-toggle[aria-expanded="true"] {
+    background-image: url(/assets/icons/icon-close.svg);
+  }
+</style>

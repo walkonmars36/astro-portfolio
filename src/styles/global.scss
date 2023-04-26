@@ -1,4 +1,6 @@
 @use "./variables.scss" as *;
+@use "./utilities.scss" as *;
+
 @font-face {
   font-family: "Space Grotesk";
   src: url("/public/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf")
@@ -29,10 +31,11 @@ h1 {
 
 ul {
   list-style: none;
+  margin: 0;
 }
 
 html.dark {
-  background-color: var(--body-bg-color);
+  background-color: var(--clr-dark);
   color: #fff;
 }
 
@@ -42,5 +45,5 @@ html.light {
 }
 
 .dark a {
-  color: #fff;
+  color: var(--clr-green);
 }

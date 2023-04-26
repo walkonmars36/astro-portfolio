@@ -1,12 +1,29 @@
 ---
 import Navigation from "./Navigation.astro";
-
+import NavToggle from "./NavToggle.astro";
 import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
 <header>
   <ThemeIcon />
+  <a class="mark-home" href="/">MarkLawson</a>
   <nav>
     <Navigation />
   </nav>
+  <NavToggle />
 </header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mark-home {
+    margin-inline: auto;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+</style>
