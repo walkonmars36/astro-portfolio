@@ -1,5 +1,4 @@
 ---
-import "../styles/_variables.scss";
 ---
 
 <ul
@@ -29,9 +28,11 @@ import "../styles/_variables.scss";
     }
   }
 
-  @supports (backdrop-filter: blur(3rem)) {
+  @supports (backdrop-filter: blur(3rem)) or
+    (-webkit-backdrop-filter: blur(3rem)) {
     .primary-navigation {
       backdrop-filter: blur(3rem);
+      -webkit-backdrop-filter: blur(3rem);
       background: hsl(0 0% 100% / 0.05);
     }
   }
