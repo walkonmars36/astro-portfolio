@@ -1,0 +1,23 @@
+---
+import projectData from "../data/project-data.json";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <section class="container space-xl">
+    <h2>All Projects</h2>
+    {
+      projectData.map(({ title, images, tech }) => (
+        <div class="project">
+          <img src={images.small} alt={title} />
+          <h3>{title}</h3>
+          <ul>
+            {tech.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+</BaseLayout>

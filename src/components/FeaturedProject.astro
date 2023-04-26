@@ -6,17 +6,31 @@ const { images, title, tech } = projectData[0];
 
 <section class="container space-xl">
   <h2>Featured Project</h2>
-  <img src={images.small} alt={title} />
-  <h3>{title}</h3>
+  <img class="space-l" src={images.small} alt={title} />
+  <h3 class="space-s">{title}</h3>
   <ul>
     {tech.map((item) => <li>{item}</li>)}
   </ul>
+  <div class="project-links space-s">
+    <a href="/project">View Project</a>
+    <a href="/">View Code</a>
+  </div>
 </section>
 
 <style>
+  h2 {
+    text-align: center;
+  }
+
   ul {
     display: flex;
     width: 80%;
     justify-content: space-between;
+  }
+
+  .project-links {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
   }
 </style>

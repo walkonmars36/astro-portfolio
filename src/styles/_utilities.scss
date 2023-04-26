@@ -1,8 +1,8 @@
-/* ------------------- */
-/* Utility classes     */
-/* ------------------- */
-
 // Path: src/styles/_utilities.scss
+
+/////  utility classes /////
+
+// Layout //
 
 .flex {
   display: flex;
@@ -13,4 +13,36 @@
   margin-inline: auto;
   max-width: 80rem;
   padding-inline: 1em;
+}
+
+.d-block {
+  display: block;
+}
+
+// margins //
+
+.space-s {
+  margin-top: var(--space-s);
+}
+
+.space-m {
+  margin-top: var(--space-m);
+}
+
+.space-l {
+  margin-top: var(--space-l);
+}
+
+.space-xl {
+  margin-top: var(--space-xl);
+}
+
+/////  Text ////
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 700;
 }
