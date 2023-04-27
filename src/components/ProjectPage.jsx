@@ -15,5 +15,26 @@ export default function ProjectPage({ id }) {
     return <div>Loading...</div>;
   }
 
-  return project ? <h1>{project.title}</h1> : <div>Project not found</div>;
+  return (
+    <section class="container space-xl">
+      {project ? (
+        <>
+          <h1>{project.title}</h1>
+          <img class="space-l" src={project.images.small} alt={project.title} />
+          <div class="project-links space-s flex">
+            <a href="/">View Live Site</a>
+            <a href="/">View Code</a>
+          </div>
+          <p class="space-l">{project.description}</p>
+          <ul class="flex space-l">
+            {project.tech.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <div>Project not found</div>
+      )}
+    </section>
+  );
 }

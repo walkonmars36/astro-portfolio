@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectPage from "../../components/ProjectPage";
+import slugify from "../../utils/slugify";
 
 export async function getStaticPaths() {
   return [
