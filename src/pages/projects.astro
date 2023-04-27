@@ -1,23 +1,36 @@
 ---
 import projectData from "../data/project-data.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactMe from "../components/ContactMe.astro";
 ---
 
 <BaseLayout>
   <section class="container space-xl">
     <h2>All Projects</h2>
     {
-      projectData.map(({ title, images, tech }) => (
-        <div class="project">
+      projectData.map(({ id, title, images, tech }) => (
+        <div class="project space-xl">
           <img src={images.small} alt={title} />
-          <h3>{title}</h3>
-          <ul>
+          <h3 class="space-s">{title}</h3>
+          <ul class="flex">
             {tech.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
+
+          <div class="project-links space-s flex">
+            <a href={`/project-detail/${id}`}>View Project</a>
+            <a href="/">View Code</a>
+          </div>
         </div>
       ))
     }
+    <ContactMe />
   </section>
 </BaseLayout>
+
+<style>
+  .project-links {
+    --gap: var(--space-m);
+  }
+</style>

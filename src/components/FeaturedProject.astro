@@ -8,11 +8,11 @@ const { images, title, tech } = projectData[0];
   <h2>Featured Project</h2>
   <img class="space-l" src={images.small} alt={title} />
   <h3 class="space-s">{title}</h3>
-  <ul>
+  <ul class="flex">
     {tech.map((item) => <li>{item}</li>)}
   </ul>
-  <div class="project-links space-s">
-    <a href="/project">View Project</a>
+  <div class="project-links space-s flex">
+    <a href={`/project-detail/${0}`}>View Project</a>
     <a href="/">View Code</a>
   </div>
 </section>
@@ -22,15 +22,7 @@ const { images, title, tech } = projectData[0];
     text-align: center;
   }
 
-  ul {
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-  }
-
   .project-links {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
+    --gap: var(--space-m);
   }
 </style>
