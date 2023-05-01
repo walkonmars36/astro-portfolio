@@ -1,7 +1,7 @@
 ---
 import projectData from "../data/project-data.json";
 
-const { images, title, tech } = projectData[0];
+const { id, images, title, tech } = projectData[0];
 ---
 
 <section class="container space-xl">
@@ -12,7 +12,7 @@ const { images, title, tech } = projectData[0];
     {tech.map((item) => <li>{item}</li>)}
   </ul>
   <div class="project-links space-s flex">
-    <a href={`/project-detail/${0}`}>View Project</a>
+    <a href={`/project-detail/${id}`}>View Project</a>
     <a href="/">View Code</a>
   </div>
 </section>

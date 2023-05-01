@@ -1,20 +1,32 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ProjectPage from "../../components/ProjectPage";
-import slugify from "../../utils/slugify";
+
+import projectData from "../../data/project-data.json";
 
 export async function getStaticPaths() {
-  return [
-    { params: { id: "0" } },
-    { params: { id: "1" } },
-    { params: { id: "2" } },
-    { params: { id: "3" } },
-  ];
+  return projectData.map(({ id, title, description, images, tech }) => {
+    return {
+      params: { id },
+      props: { title, description, images, tech },
+    };
+  });
 }
 
-const { id } = Astro.params;
+const { title, description, images, tech } = Astro.props;
 ---
 
 <BaseLayout>
-  <ProjectPage client:load id={id} />
+  <!-- <ProjectPage client:load id={id} /> -->
+  <main class="container space-xl">
+    <h1>{title}</h1>
+    <img class="space-l" src={images.small} alt={title} />
+    <div class="project-links space-s flex">
+      <a href="/">View Live Site</a>
+      <a href="/">View Code</a>
+    </div>
+    <p class="space-l">{description}</p>
+    <ul class="flex space-l">
+      {tech.map((item) => <li>{item}</li>)}
+    </ul>
+  </main>
 </BaseLayout>

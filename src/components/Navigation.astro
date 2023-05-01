@@ -19,7 +19,8 @@
     flex-direction: column;
     inset: 0 0 0 30%;
     position: fixed;
-    background: hsl(228, 19%, 5% / 0.97);
+    background: hsl(var(--clr-dark) / 0.97);
+
     padding: min(10rem, 15vh) 2rem;
     z-index: 1;
     transform: translateX(100%);
@@ -35,7 +36,7 @@
     .primary-navigation {
       backdrop-filter: blur(3rem);
       -webkit-backdrop-filter: blur(3rem);
-      background: hsl(0 0% 100% / 0.05);
+      background: hsl(var(--clr-dark) / 0.5);
     }
   }
 

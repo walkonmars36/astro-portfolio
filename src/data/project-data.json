@@ -1,6 +1,6 @@
 [
   {
-    "id": "0",
+    "id": "planets-fact-site",
     "title": "Planets Fact Site",
     "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
     "images": {
@@ -10,7 +10,7 @@
     "tech": ["Astro", "SCSS", "Javascript", "Preact"]
   },
   {
-    "id": "1",
+    "id": "todo-app",
     "title": "Todo App",
     "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
     "images": {
@@ -20,7 +20,7 @@
     "tech": ["Astro", "SCSS", "Javascript", "Preact"]
   },
   {
-    "id": "2",
+    "id": "galleria",
     "title": "Galleria",
     "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
     "images": {
@@ -30,7 +30,7 @@
     "tech": ["Astro", "SCSS", "Javascript", "Preact"]
   },
   {
-    "id": "3",
+    "id": "entertainment-app",
     "title": "Entertainment App",
     "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
     "images": {
