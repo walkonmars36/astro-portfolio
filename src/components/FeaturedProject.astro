@@ -4,16 +4,20 @@ import projectData from "../data/project-data.json";
 const { id, images, title, tech } = projectData[0];
 ---
 
-<section class="container space-xl">
+<section class="container space-xl-2xl">
   <h2>Featured Project</h2>
-  <img class="space-l" src={images.small} alt={title} />
-  <h3 class="space-s">{title}</h3>
-  <ul class="flex">
-    {tech.map((item) => <li>{item}</li>)}
-  </ul>
-  <div class="project-links space-s flex">
-    <a href={`/project-detail/${id}`}>View Project</a>
-    <a href="/">View Code</a>
+  <div class="project">
+    <img class="space-l" src={images.small} alt={title} />
+    <div class="project__content">
+      <h3 class="space-s">{title}</h3>
+      <ul class="flex">
+        {tech.map((item) => <li>{item}</li>)}
+      </ul>
+      <div class="project-links space-s flex">
+        <a href={`/project-detail/${id}`}>View Project</a>
+        <a href="/">View Code</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -24,5 +28,23 @@ const { id, images, title, tech } = projectData[0];
 
   .project-links {
     --gap: var(--space-m);
+  }
+
+  @media (min-width: 760px) {
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: var(--space-xl);
+    }
+
+    .project__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project {
+      margin-top: var(--space-l);
+    }
   }
 </style>

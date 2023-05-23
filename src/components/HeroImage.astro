@@ -1,25 +1,21 @@
 ---
-import profileMobile from "/assets/images/image-profile-mobile.webp";
+import profileMobile from "/assets/images/image-profile-mobile.png";
 
-import profileTablet from "/assets/images/image-profile-tablet.webp";
+import profileTablet from "/assets/images/image-profile-tablet.png";
 
-import profileDesktop from "/assets/images/image-profile-desktop.webp";
+import profileDesktop from "/assets/images/image-profile-desktop.png";
 ---
 
 <picture>
-  <source media="(max-width: 425px)" srcset={profileMobile} type="image/webp" />
+  <source media="(max-width: 425px)" srcset={profileMobile} type="image/png" />
 
   <source
     media="(min-width: 426px) and (max-width: 768px)"
     srcset={profileTablet}
-    type="image/webp"
+    type="image/png"
   />
 
-  <source
-    media="(min-width: 769px)"
-    srcset={profileDesktop}
-    type="image/webp"
-  />
+  <source media="(min-width: 769px)" srcset={profileDesktop} type="image/png" />
 
   <img src={profileMobile} alt="Profile of Mark Lawson" />
 </picture>
@@ -28,7 +24,7 @@ import profileDesktop from "/assets/images/image-profile-desktop.webp";
   @media (max-width: 425px) {
     picture {
       img {
-        width: 60%;
+        width: 90%;
         margin-inline: auto;
       }
     }

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
 import projectData from "../../data/project-data.json";
 
 export async function getStaticPaths() {
@@ -16,7 +15,6 @@ const { title, description, images, tech } = Astro.props;
 ---
 
 <BaseLayout>
-  <!-- <ProjectPage client:load id={id} /> -->
   <main class="container space-xl">
     <h1>{title}</h1>
     <img class="space-l" src={images.small} alt={title} />

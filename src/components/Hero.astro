@@ -3,21 +3,29 @@ import HeroImage from "../components/HeroImage.astro";
 import ContactMe from "../components/ContactMe.astro";
 ---
 
-<section class="container">
+<section class="container hero">
   <HeroImage />
-  <h1 class="space-m">Hi, I'm Mark</h1>
-  <p class="space-s">
-    Based in Bristol, UK. I’m an aspiring front-end developer, who, while lost
-    in music, is also now lost in code. I’m driven to produce excellent things
-    for the web, making them as accessible as I possibly can with the tools I
-    currently have. <a href="/about">Read More ...</a>
-  </p>
-  <ContactMe />
+  <div class="hero__content">
+    <h1 class="space-m">Hi, I'm Mark</h1>
+    <p class="space-s">
+      Based in Bristol, UK. I’m an aspiring front-end developer, who, while lost
+      in music, is also now lost in code. I’m driven to produce excellent things
+      for the web, making them as accessible as I possibly can with the tools I
+      currently have. <a href="/about">Read More ...</a>
+    </p>
+    <ContactMe />
+  </div>
 </section>
 
 <style>
   section {
     text-align: center;
+  }
+
+  .hero {
+    margin-top: var(--space-l-xl);
+    border-bottom: 1px solid var(--clr-lilac);
+    padding-bottom: var(--space-l-xl);
   }
 
   a {
@@ -27,6 +35,36 @@ import ContactMe from "../components/ContactMe.astro";
   @media (max-width: 374px) {
     h1 {
       font-size: 2.2rem;
+    }
+  }
+
+  @media (min-width: 760px) {
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: " hero__content hero__image";
+      align-items: center;
+      justify-items: center;
+      gap: 2rem;
+      border-bottom: 1px solid var(--clr-lilac);
+    }
+
+    .hero__content {
+      grid-area: hero__content;
+      text-align: left;
+    }
+
+    .hero__content h1 {
+      font-size: 3rem;
+    }
+
+    .hero__content p {
+      font-size: 1.2rem;
+    }
+
+    .hero__content a {
+      font-size: 1.2rem;
     }
   }
 </style>

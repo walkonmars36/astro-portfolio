@@ -19,24 +19,18 @@
     flex-direction: column;
     inset: 0 0 0 30%;
     position: fixed;
-    background: hsl(var(--clr-dark) / 0.97);
+    background: var(--clr-lilac);
 
     padding: min(10rem, 15vh) 2rem;
-    z-index: 1;
     transform: translateX(100%);
     transition: transform ease-out 0.5s;
 
+    & * a {
+      font-size: var(--step-2);
+    }
+
     &[data-visible="true"] {
       transform: translateX(0);
-    }
-  }
-
-  @supports (backdrop-filter: blur(3rem)) or
-    (-webkit-backdrop-filter: blur(3rem)) {
-    .primary-navigation {
-      backdrop-filter: blur(3rem);
-      -webkit-backdrop-filter: blur(3rem);
-      background: hsl(var(--clr-dark) / 0.5);
     }
   }
 

@@ -7,24 +7,58 @@ import ContactMe from "../components/ContactMe.astro";
 <BaseLayout>
   <section class="container space-xl">
     <h2>All Projects</h2>
-    {
-      projectData.map(({ id, title, images, tech }) => (
-        <div class="project space-xl">
-          <img src={images.small} alt={title} />
-          <h3 class="space-s">{title}</h3>
-          <ul class="flex">
-            {tech.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-
-          <div class="project-links space-s flex">
-            <a href={`/project-detail/${id}`}>View Project</a>
-            <a href="/">View Code</a>
+    <div class="two-columns">
+      {
+        projectData.map(({ id, title, images, tech }) => (
+          <div class="project space-xl">
+            <img src={images.small} alt={title} />
+            <h3 class="space-s">{title}</h3>
+            <ul class="flex">
+              {tech.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="project-links space-s flex">
+              <a href={`/project-detail/${id}`}>View Project</a>
+              <a href="/">View Code</a>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
     <ContactMe />
   </section>
 </BaseLayout>
+
+<style>
+  .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-links {
+    margin-top: 1rem;
+  }
+
+  .project-links a {
+    margin-right: 1rem;
+  }
+
+  .project-links a:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: 760px) {
+    .project {
+      width: 45%;
+    }
+
+    .two-columns {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+</style>
