@@ -87,8 +87,16 @@
   // COLOURS
 
   --clr-dark: hsl(269, 33%, 12%); // 269, 33%, 12%
-  --clr-dark-grey: hsl(0, 0%, 16%); // 0, 0%, 16%
+  --clr-grey: hsl(264, 13%, 30%); // 0, 0%, 16%
   --clr-white: hsl(0 0% 89%); // 0 0% 89%
   --clr-green: hsl(171, 65%, 66%);
   --clr-lilac: hsl(266, 22%, 21%);
+  --clr-lilac-bright: hsl(25, 22%, 31%);
+
+  // FORM STYLING
+  --input-background: var(--clr-dark);
+  --input-border: var(--clr-grey);
+  --input-focus-h: 264;
+  --input-focus-s: 13%;
+  --input-focus-l: 80%;
 }

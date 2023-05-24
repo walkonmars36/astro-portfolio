@@ -18,7 +18,7 @@ import ContactMe from "../components/ContactMe.astro";
                 <li>{item}</li>
               ))}
             </ul>
-            <div class="project-links space-s flex">
+            <div class="project__links space-s flex space-around">
               <a href={`/project-detail/${id}`}>View Project</a>
               <a href="/">View Code</a>
             </div>
@@ -31,23 +31,14 @@ import ContactMe from "../components/ContactMe.astro";
 </BaseLayout>
 
 <style>
+  h2 {
+    text-align: center;
+  }
   .project {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-
-  .project-links {
-    margin-top: 1rem;
-  }
-
-  .project-links a {
-    margin-right: 1rem;
-  }
-
-  .project-links a:last-child {
-    margin-right: 0;
   }
 
   @media (min-width: 760px) {

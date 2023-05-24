@@ -3,28 +3,93 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h1>Contact Me</h1>
-  <p>
-    I would love to hear about your project and how I could help. Please fill in
-    the form, and I’ll get back to you as soon as possible.
-  </p>
-
-  <form name="contact" action="/success" method="post" data-netlify="true">
-    <p>
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" />
-    </p>
-
-    <p>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" />
-    </p>
-
-    <p>
-      <label for="message">Message</label>
-      <textarea name="message" cols="30" rows="10"></textarea>
-    </p>
-
-    <button type="submit">Submit</button>
-  </form>
+  <main class="container page">
+    <section class="page__text">
+      <h1>Contact Me</h1>
+      <p>
+        I would love to hear about your project and how I could help. Please
+        fill in the form, and I’ll get back to you as soon as possible.
+      </p>
+    </section>
+    <form name="contact" action="/success" method="post" data-netlify="true">
+      <p>
+        <label for="name">Name</label>
+        <input class="input" type="text" name="name" id="name" />
+      </p>
+      <p>
+        <label for="email">Email</label>
+        <input class="input" type="email" name="email" id="email" />
+      </p>
+      <p>
+        <label for="message">Message</label>
+        <textarea class="input" name="message" rows="5"></textarea>
+      </p>
+      <button class="submit btn" type="submit">Send</button>
+    </form>
+  </main>
 </BaseLayout>
+
+<style lang="scss">
+  .page {
+    margin-top: var(--space-xl);
+
+    &__text {
+      text-align: center;
+    }
+  }
+  form {
+    margin-top: var(--space-l);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .input {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    color: inherit;
+    width: 100%;
+    padding: 0.25em 0.5em;
+    background-color: var(--input-background);
+    border: none;
+    border-bottom: 2px solid var(--input-border);
+    outline: transparent;
+  }
+
+  .input:focus {
+    background-color: var(--clr-grey);
+    border-color: hsl(
+      var(--input-focus-h),
+      var(--input-focus-s),
+      var(--input-focus-l)
+    );
+  }
+
+  .input:not(textarea) {
+    line-height: 1;
+    height: 2.25rem;
+  }
+
+  textarea.input {
+    margin-top: var(--space-2xs);
+    resize: vertical;
+    overflow: auto;
+  }
+
+  button.submit {
+    background-color: var(--clr-green);
+    color: var(--clr-dark);
+    border-radius: 4px;
+    padding: 0.5em 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border: 2px solid var(--clr-dark);
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--clr-dark);
+      color: var(--clr-green);
+      border: 2px solid var(--clr-green);
+    }
+  }
+</style>
