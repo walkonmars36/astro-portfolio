@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <h1>Contact Me</h1>
+  <p>
+    I would love to hear about your project and how I could help. Please fill in
+    the form, and I’ll get back to you as soon as possible.
+  </p>
+
+  <form
+    name="contact"
+    action="/pages/success"
+    method="post"
+    data-netlify="true"
+  >
+    <p>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" />
+    </p>
+
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+    </p>
+
+    <p>
+      <label for="message">Message</label>
+      <textarea name="message" cols="30" rows="10"></textarea>
+    </p>
+
+    <button type="submit">Submit</button>
+  </form>
+</BaseLayout>

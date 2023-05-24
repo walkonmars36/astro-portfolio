@@ -13,7 +13,7 @@ import ContactMe from "../components/ContactMe.astro";
           <div class="project space-xl">
             <img src={images.small} alt={title} />
             <h3 class="space-s">{title}</h3>
-            <ul class="flex">
+            <ul class="flex" role="list">
               {tech.map((item) => (
                 <li>{item}</li>
               ))}

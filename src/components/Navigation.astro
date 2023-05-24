@@ -1,11 +1,7 @@
 ---
 ---
 
-<ul
-  id="primary-navigation"
-  data-visible="false"
-  class="primary-navigation flex"
->
+<ul data-visible="false" class="primary-navigation flex">
   <li class="active"><a href="/">Home</a></li>
   <li><a href="/about/">About</a></li>
   <li><a href="/projects/">Projects</a></li>
@@ -14,6 +10,9 @@
 </ul>
 
 <style lang="scss">
+  ul {
+    list-style: none;
+  }
   .primary-navigation {
     --gap: clamp(1.5rem, 5vw, 3.5rem);
     flex-direction: column;

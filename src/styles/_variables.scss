@@ -85,9 +85,10 @@
   --space-s-l: clamp(1rem, calc(0.48rem + 2.61vw), 2.5rem);
 
   // COLOURS
-  --clr-dark: hsl(0, 0%, 7%); // 0, 0%, 7%
+
+  --clr-dark: hsl(269, 33%, 12%); // 269, 33%, 12%
   --clr-dark-grey: hsl(0, 0%, 16%); // 0, 0%, 16%
-  --clr-white: hsl(0 0% 96%);
+  --clr-white: hsl(0 0% 89%); // 0 0% 89%
   --clr-green: hsl(171, 65%, 66%);
   --clr-lilac: hsl(266, 22%, 21%);
 }
