@@ -40,10 +40,10 @@ const tags = [
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
     </p>
-    <div class="filter-header flex align-center">
-      <h2>Filter By Tags:</h2>
-      <ResetTags />
-    </div>
+
+    <h2>Filter By Tags:</h2>
+    <ResetTags />
+
     <ul class="flex wrap">{tags.map((tag) => <SelectableTag name={tag} />)}</ul>
     <ul>
       {
@@ -61,11 +61,7 @@ const tags = [
   </main>
 </BaseLayout>
 
-<style>
-  .filter-header {
-    margin: var(--space-l) 0 var(--space-m) 0;
-  }
-</style>
+<style></style>
 
 <script define:vars={{ tags }}>
   let blogPosts = document.querySelectorAll("li[data-tags]");
@@ -123,5 +119,6 @@ const tags = [
     tagMap = Object.assign(...tags.map((tag) => ({ [tag]: false })));
     checkedTags = Object.keys(tagMap).filter((tag) => tagMap[tag] === true);
   }
+
   resetBtn.addEventListener("click", resetTagMap);
 </script>
