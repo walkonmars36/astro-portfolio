@@ -9,6 +9,18 @@
   gap: var(--gap, 1rem);
 }
 
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
 .container {
   margin-inline: auto;
   max-width: 80rem;
@@ -61,6 +73,12 @@
 
 .bold {
   font-weight: 700;
+}
+
+// Font Sizes //
+
+.font-xs {
+  font-size: var(--step--2);
 }
 
 ///// Colors /////

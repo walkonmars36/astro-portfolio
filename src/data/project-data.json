@@ -7,7 +7,7 @@
       "small": "/assets/images/thumbnail-planets-small.webp",
       "large": "/assets/images/thumbnail-planets-large.webp"
     },
-    "tech": ["Astro", "SCSS", "Javascript", "Preact"]
+    "tech": ["Astro", "SCSS", "Javascript"]
   },
   {
     "id": "todo-app",
@@ -17,7 +17,7 @@
       "small": "/assets/images/thumbnail-todo-small.webp",
       "large": "/assets/images/thumbnail-todo-large.webp"
     },
-    "tech": ["Astro", "SCSS", "Javascript", "Preact"]
+    "tech": ["React", "SCSS", "Nextjs"]
   },
   {
     "id": "galleria",

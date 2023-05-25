@@ -10,7 +10,7 @@ const { id, images, title, tech } = projectData[0];
     <img class="space-l" src={images.small} alt={title} />
     <div class="project__content">
       <h3 class="space-s">{title}</h3>
-      <ul class="flex" role="list">
+      <ul class="flex space-between" role="list">
         {tech.map((item) => <li>{item}</li>)}
       </ul>
       <div class="project__links space-s flex space-around">

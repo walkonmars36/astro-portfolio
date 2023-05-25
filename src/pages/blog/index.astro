@@ -1,0 +1,112 @@
+---
+import "../../styles/global.scss";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import SelectableTag from "../../components/SelectableTag.astro";
+
+let allPosts = await Astro.glob("./posts/*.md");
+
+allPosts.sort((a, b) => {
+  let dateA = new Date(a.frontmatter.pubDate);
+  let dateB = new Date(b.frontmatter.pubDate);
+  if (dateA > dateB) {
+    return -1;
+  } else if (dateA < dateB) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+
+const tags = [
+  ...new Set(
+    allPosts
+      .map((post) => post.frontmatter.tags)
+      .flat()
+      .sort()
+  ),
+];
+---
+
+<BaseLayout
+  pageTitle="Blog"
+  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  Type="Article"
+>
+  <main class="page container space-xl">
+    <h1>Neque sodales ut etiam sit amet</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <h2>Filter By Tags</h2>
+    <ul class="flex wrap">{tags.map((tag) => <SelectableTag name={tag} />)}</ul>
+    <ul>
+      {
+        allPosts.map((post) => (
+          <BlogPost
+            class="blog-post"
+            url={post.url}
+            title={post.frontmatter.title}
+            description={post.frontmatter.description}
+            tags={post.frontmatter.tags}
+          />
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  ul {
+    width: 80%;
+    padding: 0;
+  }
+</style>
+
+<script define:vars={{ tags }}>
+  let blogPosts = document.querySelectorAll("li[data-tags]");
+  console.log("Initial blogPosts: ", blogPosts); // To see the initial blogPosts nodes
+  let filters = document.querySelectorAll("input");
+  console.log("Initial filters: ", filters); // To see the initial filter checkboxes
+
+  let tagMap = Object.assign(...tags.map((tag) => ({ [tag]: false })));
+  console.log("Initial tagMap: ", tagMap); // To see the initial tagMap object
+
+  for (const filter of filters) {
+    filter.addEventListener("change", (e) => {
+      let isChecked = e.target.checked;
+      let name = filter.name;
+      tagMap[name] = isChecked;
+
+      console.log(
+        `Checkbox for tag ${name} has been ${
+          isChecked ? "checked" : "unchecked"
+        }`
+      );
+      console.log("Updated tagMap: ", tagMap); // To see the updated tagMap object after checkbox change
+
+      toggleVisibility();
+    });
+  }
+
+  function toggleVisibility() {
+    let checkedTags = Object.keys(tagMap).filter((tag) => tagMap[tag] === true);
+    console.log("Checked tags: ", checkedTags); // To see the array of checked tags
+
+    if (checkedTags.length === 0) {
+      blogPosts.forEach((post) => (post.style.display = "block"));
+    } else {
+      for (const blogPost of blogPosts) {
+        let tags = blogPost.dataset.tags.split(",");
+        console.log("Tags for this blogPost: ", tags); // To see the tags of the current blogPost
+
+        if (checkedTags.some((tag) => tags.includes(tag))) {
+          blogPost.style.display = "block";
+        } else {
+          blogPost.style.display = "none";
+        }
+      }
+    }
+  }
+</script>
