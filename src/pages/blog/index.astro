@@ -1,6 +1,7 @@
 ---
 import "../../styles/global.scss";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ResetTags from "../../components/ResetTags.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import SelectableTag from "../../components/SelectableTag.astro";
 
@@ -39,7 +40,10 @@ const tags = [
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
     </p>
-    <h2>Filter By Tags</h2>
+    <div class="filter-header flex align-center">
+      <h2>Filter By Tags:</h2>
+      <ResetTags />
+    </div>
     <ul class="flex wrap">{tags.map((tag) => <SelectableTag name={tag} />)}</ul>
     <ul>
       {
@@ -58,9 +62,8 @@ const tags = [
 </BaseLayout>
 
 <style>
-  ul {
-    width: 80%;
-    padding: 0;
+  .filter-header {
+    margin: var(--space-l) 0 var(--space-m) 0;
   }
 </style>
 
@@ -69,6 +72,8 @@ const tags = [
   console.log("Initial blogPosts: ", blogPosts); // To see the initial blogPosts nodes
   let filters = document.querySelectorAll("input");
   console.log("Initial filters: ", filters); // To see the initial filter checkboxes
+
+  const resetBtn = document.querySelector("#reset-btn");
 
   let tagMap = Object.assign(...tags.map((tag) => ({ [tag]: false })));
   console.log("Initial tagMap: ", tagMap); // To see the initial tagMap object
@@ -109,4 +114,14 @@ const tags = [
       }
     }
   }
+
+  function resetTagMap() {
+    filters.forEach((filter) => (filter.checked = false));
+
+    blogPosts.forEach((post) => (post.style.display = "block"));
+
+    tagMap = Object.assign(...tags.map((tag) => ({ [tag]: false })));
+    checkedTags = Object.keys(tagMap).filter((tag) => tagMap[tag] === true);
+  }
+  resetBtn.addEventListener("click", resetTagMap);
 </script>
