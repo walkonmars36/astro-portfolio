@@ -41,11 +41,11 @@ const tags = [
       tempor incididunt ut labore et dolore magna aliqua.
     </p>
 
-    <h2>Filter By Tags:</h2>
+    <h2 class="space-xl">Filter By Tags:</h2>
     <ResetTags />
 
     <ul class="flex wrap">{tags.map((tag) => <SelectableTag name={tag} />)}</ul>
-    <ul>
+    <section>
       {
         allPosts.map((post) => (
           <BlogPost
@@ -66,14 +66,14 @@ const tags = [
           />
         ))
       }
-    </ul>
+    </section>
   </main>
 </BaseLayout>
 
 <style></style>
 
 <script define:vars={{ tags }}>
-  let blogPosts = document.querySelectorAll("div[data-tags]");
+  let blogPosts = document.querySelectorAll("section[data-tags]");
   console.log("Initial blogPosts: ", blogPosts); // To see the initial blogPosts nodes
   let filters = document.querySelectorAll("input");
   console.log("Initial filters: ", filters); // To see the initial filter checkboxes

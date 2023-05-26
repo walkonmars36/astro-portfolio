@@ -11,7 +11,7 @@ import ContactMe from "../components/ContactMe.astro";
       {
         projectData.map(({ id, title, images, tech }) => (
           <div class="project space-xl">
-            <img src={images.small} alt={title} />
+            <a href={`/project-detail/${id}`}> <img src={images.small} alt={title} /></a>
             <h3 class="space-s">{title}</h3>
             <ul class="flex" role="list">
               {tech.map((item) => (
