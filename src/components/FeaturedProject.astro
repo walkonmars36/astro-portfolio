@@ -5,15 +5,15 @@ const { id, images, title, tech } = projectData[0];
 ---
 
 <section class="container space-xl-2xl">
-  <h2 class="animate-up">Featured Project</h2>
+  <h2 class="animate-up uppercase">Featured Project</h2>
   <div class="project">
     <img class="space-l animate-up" src={images.small} alt={title} />
     <div class="project__content">
-      <h3 class="space-s">{title}</h3>
-      <ul class="flex space-between" role="list">
-        {tech.map((item) => <li>{item}</li>)}
+      <h3 class="space-s uppercase">{title}</h3>
+      <ul class="flex" role="list">
+        {tech.map((item) => <li class="uppercase animate-right font-m-step-1 ">{item}</li>)}
       </ul>
-      <div class="project__links space-s flex space-around">
+      <div class="project__links uppercase space-s flex">
         <a class="animate-left" href={`/project-detail/${id}`}>View Project</a>
         <a class="animate-right" href="/">View Code</a>
       </div>
@@ -22,32 +22,24 @@ const { id, images, title, tech } = projectData[0];
 </section>
 
 <style lang="scss">
-  h2 {
-    text-align: center;
-  }
 
-  .project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
   @media (min-width: 760px) {
     .project {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: var(--space-xl);
-    }
+      margin-top: var(--space-l);
 
-    .project__content {
+      &__content {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
 
-    .project {
-      margin-top: var(--space-l);
     }
+
+ 
+   
   }
 </style>

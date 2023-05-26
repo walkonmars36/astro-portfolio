@@ -3,28 +3,28 @@
 
   // FONT SIZES
   /* Step -2: 11.11px → 12.80px */
-  --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
+  --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem); // font-xs-step-2
 
   /* Step -1: 13.33px → 16.00px */
-  --step--1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem);
+  --step--1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem); // font-s-step-1
 
   /* Step 0: 16.00px → 20.00px */
-  --step-0: clamp(1rem, calc(0.91rem + 0.43vw), 1.25rem);
+  --step-0: clamp(1rem, calc(0.91rem + 0.43vw), 1.25rem); // font-base-step-0
 
   /* Step 1: 19.20px → 25.00px */
-  --step-1: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.56rem);
+  --step-1: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.56rem); // font-m-step-1
 
   /* Step 2: 23.04px → 31.25px */
-  --step-2: clamp(1.44rem, calc(1.26rem + 0.89vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.26rem + 0.89vw), 1.95rem); // font-l-step-2
 
   /* Step 3: 27.65px → 39.06px */
-  --step-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem); // font-xl-step-3
 
   /* Step 4: 33.18px → 48.83px */
-  --step-4: clamp(2.07rem, calc(1.73rem + 1.7vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.73rem + 1.7vw), 3.05rem); // font-2xl-step-4
 
   /* Step 5: 39.81px → 61.04px */
-  --step-5: clamp(2.49rem, calc(2.03rem + 2.31vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(2.03rem + 2.31vw), 3.82rem); // font-3xl-step-5
 
   ////////  SPACING  /////////
 

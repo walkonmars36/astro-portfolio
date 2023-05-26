@@ -31,7 +31,7 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", 
       {
         frontmatter.tags.map((tag) => (
           <a href={`/tags/${tag}`}>
-            <p class="tag font-xs">{tag}</p>
+            <p class="tag font-xs-step-2">{tag}</p>
           </a>
         ))
       }

@@ -36,8 +36,9 @@ const observer = new IntersectionObserver(entries => {
   });
 });
 
-animate.forEach(section => {
-  observer.observe(section);
+animate.forEach((element, index) => {
+  // element.style.transitionDelay = `${index * .2}s`
+  observer.observe(element);
 });
 
 
