@@ -23,7 +23,7 @@ const { pageTitle } = Astro.props;
     <button class="back-to-top" title="Back to top" ><span class="chevron">&#9650;</span></button>
     <!-- <Footer /> -->
     <script>
-      import "../scripts/menu.js";
+      import "../scripts/main.js";
     </script>
   </body>
 </html>
@@ -53,26 +53,3 @@ const { pageTitle } = Astro.props;
 
 </style>
 
-<script is:inline>
-
-  const backToTopButton = document.querySelector(".back-to-top");
-
-
-  if (backToTopButton !== null) {
-    backToTopButton.addEventListener("click", scrollToTop);
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        backToTopButton.classList.add("show");
-      } else {
-        backToTopButton.classList.remove("show");
-      }
-    });
-  }
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-</script>

@@ -5,17 +5,17 @@ const { id, images, title, tech } = projectData[0];
 ---
 
 <section class="container space-xl-2xl">
-  <h2>Featured Project</h2>
+  <h2 class="animate-up">Featured Project</h2>
   <div class="project">
-    <img class="space-l" src={images.small} alt={title} />
+    <img class="space-l animate-up" src={images.small} alt={title} />
     <div class="project__content">
       <h3 class="space-s">{title}</h3>
       <ul class="flex space-between" role="list">
         {tech.map((item) => <li>{item}</li>)}
       </ul>
       <div class="project__links space-s flex space-around">
-        <a href={`/project-detail/${id}`}>View Project</a>
-        <a href="/">View Code</a>
+        <a class="animate-left" href={`/project-detail/${id}`}>View Project</a>
+        <a class="animate-right" href="/">View Code</a>
       </div>
     </div>
   </div>

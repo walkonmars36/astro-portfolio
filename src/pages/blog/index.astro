@@ -1,7 +1,7 @@
 ---
 import "../../styles/global.scss";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ResetTags from "../../components/ResetTags.astro";
+import ResetFilters from "../../components/ResetFilters.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import SelectableTag from "../../components/SelectableTag.astro";
 
@@ -42,7 +42,7 @@ const tags = [
     </p>
 
     <h2 class="space-xl">Filter By Tags:</h2>
-    <ResetTags />
+    <ResetFilters />
 
     <ul class="flex wrap">{tags.map((tag) => <SelectableTag name={tag} />)}</ul>
     <section>

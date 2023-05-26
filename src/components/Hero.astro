@@ -3,17 +3,19 @@ import HeroImage from "../components/HeroImage.astro";
 import ContactMe from "../components/ContactMe.astro";
 ---
 
-<section class="container hero">
+<section class="container hero ">
   <HeroImage />
-  <div class="hero__content">
-    <h1 class="space-m">Hi, I'm Mark</h1>
-    <p class="space-s">
+  <div class="hero__content animate-up">
+    <h1 class="space-m animate-up">Hi, I'm Mark</h1>
+    <p class="space-s animate-up">
       Based in Bristol, UK. I’m an aspiring front-end developer, who, while lost
       in music, is also now lost in code. I’m driven to produce excellent things
       for the web, making them as accessible as I possibly can with the tools I
       currently have. <a href="/about">Read More ...</a>
     </p>
-    <ContactMe />
+    <div class="animate-up space-l">
+      <ContactMe />
+    </div>
   </div>
 </section>
 

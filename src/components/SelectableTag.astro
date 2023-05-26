@@ -18,6 +18,11 @@ const { name } = Astro.props;
     display: none;
   }
 
+  input[type='checkbox']:hover + label, input[type='checkbox']:focus + label {
+    background-color: #0e4a3b;
+    box-shadow: 0 0 0 0.125rem var(--clr-green);
+  } 
+
   input[type="checkbox"]:checked + label {
     box-shadow: 0 0 0 0.125rem var(--clr-green);
   }
