@@ -8,12 +8,13 @@ const { date, url, title, description, tags, image } = Astro.props;
       <a href={url}>
         <img src={image} alt={title} /></a>
         <h3 class="blog-title">{title}</h3>
-        <div>
-          <time datetime={date}>{date}</time>
-        </div>
+       
+        <time class="space-xs" datetime={date}>{date}</time>
+      
       
 
-      <div>{description}</div>
+      <div class="space-s">{description}</div>
+      <a class="read-more space-s" href={url}>Read More ...</a>
    
   </article>
 
@@ -21,6 +22,10 @@ const { date, url, title, description, tags, image } = Astro.props;
   <style>
     li {
       list-style-type: none;
+    }
+
+    time {
+      display: inline-block;
     }
 
     .blog-item {
@@ -38,6 +43,10 @@ const { date, url, title, description, tags, image } = Astro.props;
       padding: 0.5em 1em;
       font-size: 1.15em;
       background-color: #f8fcfd;
+    }
+
+    .read-more {
+      display: inline-block;
     }
 
     article::after {

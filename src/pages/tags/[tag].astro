@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BlogPost from "../../components/BlogPost.astro";
 
+
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("../blog/posts/*.md");
   const uniqueTags = [
@@ -21,16 +22,48 @@ export async function getStaticPaths() {
 
 const { tag: selectedTag} = Astro.params;
 const { posts } = Astro.props;
+
+
 ---
 
 <BaseLayout pageTitle={selectedTag}>
-  <p>Posts tagged with {selectedTag}</p>
-  <ul>
-    {
-      posts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-      ))
-    }
-  </ul>
+  <nav class="container space-l" aria-label="breadcrumb">
+    <ul class="breadcrumb flex" role="list">
+      <li class="breadcrumb-item">
+        <a href="/blog/">Blog /</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Posts tagged - {selectedTag}
+      </li>
+    </ul>
+  </nav>
+ 
+  <main class="container">
+    <ul>
+      {
+        posts.map((post) => (
+          <BlogPost  date={new Date(post.frontmatter.pubDate).toLocaleDateString(
+                "en-GB",
+                {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                }
+              )}
+              class="blog-post"
+              url={post.url}
+              title={post.frontmatter.title}
+              description={post.frontmatter.description}
+              tags={post.frontmatter.tags}
+              image={post.frontmatter.image.url} />
+        ))
+      }
+    </ul>
+  </main>
 </BaseLayout>
 
+<style>
+  .breadcrumb {
+    --gap: 0.5rem;
+  }
+</style>

@@ -21,6 +21,14 @@
   flex-wrap: wrap;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
 .align-center {
   align-items: center;
 }
@@ -39,15 +47,13 @@
   margin-inline: auto;
 }
 
-.space-between {
-  justify-content: space-between;
-}
 
-.space-around {
-  justify-content: space-around;
-}
 
 // margins //
+
+.space-xs {
+  margin-top: var(--space-xs);
+}
 
 .space-s {
   margin-top: var(--space-s);

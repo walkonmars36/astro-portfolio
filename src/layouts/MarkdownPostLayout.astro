@@ -1,4 +1,5 @@
 ---
+
 import BaseLayout from "./BaseLayout.astro";
 const {frontmatter} = Astro.props;
 const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", {
@@ -6,41 +7,57 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", 
   month: "long",
   day: "numeric",
 });
+
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>Published on: {formattedDate}</p>
-  <p>Written by {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-  <div class="tags">
-    {
-      frontmatter.tags.map((tag) => (
-        <a href={`/tags/${tag}`}>
-          <p class="tag">{tag}</p>
-        </a>
-      ))
-    }
-  </div>
-  <slot />
+
+  <nav class="container space-l" aria-label="breadcrumb">
+    <ul class="breadcrumb flex" role="list">
+      <li class="breadcrumb-item">
+        <a href="/blog/">Blog /</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {frontmatter.title}
+      </li>
+    </ul>
+  </nav>
+<main class="container space-l">
+  
+    <h1>{frontmatter.title}</h1>
+    <p>Published on: {formattedDate}</p>
+    <p>Written by {frontmatter.author}</p>
+    <div class="uppercase flex  space-m">
+      {
+        frontmatter.tags.map((tag) => (
+          <a href={`/tags/${tag}`}>
+            <p class="tag font-xs">{tag}</p>
+          </a>
+        ))
+      }
+    </div>
+    <img class="space-l" src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <div class="space-m"><slot /></div>
+    
+    
+</main>
 </BaseLayout>
 
 <style>
-  a {
-    color: #00539f;
-  }
+ 
+ .breadcrumb {
+  --gap: 0.5em;
+ }
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
 
   .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
+    cursor: pointer;
+    background-color: #105651;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .tag:hover, .tag:focus, .tag:active {
+    box-shadow: 0 0 0 0.125rem var(--clr-green);
   }
 </style>
