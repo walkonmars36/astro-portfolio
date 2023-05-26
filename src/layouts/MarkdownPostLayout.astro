@@ -27,7 +27,7 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", 
     <h1>{frontmatter.title}</h1>
     <p>Published on: {formattedDate}</p>
     <p>Written by {frontmatter.author}</p>
-    <div class="uppercase flex  space-m">
+    <div class="uppercase flex wrap space-m">
       {
         frontmatter.tags.map((tag) => (
           <a href={`/tags/${tag}`}>
