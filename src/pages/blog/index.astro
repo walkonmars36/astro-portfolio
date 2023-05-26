@@ -49,11 +49,20 @@ const tags = [
       {
         allPosts.map((post) => (
           <BlogPost
+            date={new Date(post.frontmatter.pubDate).toLocaleDateString(
+              "en-GB",
+              {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              }
+            )}
             class="blog-post"
             url={post.url}
             title={post.frontmatter.title}
             description={post.frontmatter.description}
             tags={post.frontmatter.tags}
+            image={post.frontmatter.image.url}
           />
         ))
       }
@@ -64,7 +73,7 @@ const tags = [
 <style></style>
 
 <script define:vars={{ tags }}>
-  let blogPosts = document.querySelectorAll("li[data-tags]");
+  let blogPosts = document.querySelectorAll("div[data-tags]");
   console.log("Initial blogPosts: ", blogPosts); // To see the initial blogPosts nodes
   let filters = document.querySelectorAll("input");
   console.log("Initial filters: ", filters); // To see the initial filter checkboxes

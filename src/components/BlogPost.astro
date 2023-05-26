@@ -1,23 +1,38 @@
 ---
-const { title, url, description, tags } = Astro.props;
+const { date, url, title, description, tags, image } = Astro.props;
 ---
 
-<li class="post-title" data-tags={tags}><a href={url}>{title}</a></li>
+<div data-tags={tags}>
+  <article>
+    <div>
+      <a class="blog-title" href={url}>
+        <img src={image} alt={title} />
+        <h3>{title}</h3>
+        <div>
+          <time datetime={date}>{date}</time>
+        </div>
+      </a>
 
-<style>
-  li {
-    list-style-type: none;
-  }
-  a {
-    color: #00539f;
-  }
+      <div>{description}</div>
+    </div>
+  </article>
 
-  .post-title {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>
+  <style>
+    li {
+      list-style-type: none;
+    }
+
+    a.blog-title {
+      color: var(--clr-white);
+    }
+
+    .post-title {
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
+      font-size: 1.15em;
+      background-color: #f8fcfd;
+    }
+  </style>
+</div>
