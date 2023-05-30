@@ -3,7 +3,9 @@ const { name } = Astro.props;
 ---
 
 <input type="checkbox" name={name} id={name} />
-<label for={name} class="uppercase flex font-xs-step-2" id="filter">{name}</label>
+<label for={name} class="uppercase flex font-xs-step-2" id="filter"
+  >{name}</label
+>
 
 <style>
   label {
@@ -17,11 +19,6 @@ const { name } = Astro.props;
   input[type="checkbox"] {
     display: none;
   }
-
-  input[type='checkbox']:hover + label, input[type='checkbox']:focus + label {
-    background-color: #0e4a3b;
-    box-shadow: 0 0 0 0.125rem var(--clr-green);
-  } 
 
   input[type="checkbox"]:checked + label {
     box-shadow: 0 0 0 0.125rem var(--clr-green);
