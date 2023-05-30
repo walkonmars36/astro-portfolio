@@ -21,31 +21,30 @@ navToggle.addEventListener("click", function () {
   }
 });
 
-
 // Intersection Observer //
 
-const animate = document.querySelectorAll('.animate-up, .animate-left, .animate-right');
+const animate = document.querySelectorAll(
+  ".animate-up, .animate-left, .animate-right"
+);
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
+      entry.target.classList.add("is-visible");
     } else {
-      entry.target.classList.remove('is-visible');
+      entry.target.classList.remove("is-visible");
     }
   });
 });
 
 animate.forEach((element, index) => {
-  // element.style.transitionDelay = `${index * .2}s`
+  element.style.transitionDelay = `${index * 0.2}s`;
   observer.observe(element);
 });
-
 
 // Scroll to Top //
 
 const backToTopButton = document.querySelector(".back-to-top");
-
 
 if (backToTopButton !== null) {
   backToTopButton.addEventListener("click", scrollToTop);
