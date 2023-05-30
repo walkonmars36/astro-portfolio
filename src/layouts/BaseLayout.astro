@@ -20,7 +20,7 @@ const { pageTitle } = Astro.props;
     <Header />
     <slot />
 
-    <button class="back-to-top" title="Back to top" ><span class="chevron">&#9650;</span></button>
+    <!-- <button class="back-to-top" title="Back to top" ><span class="chevron">&#9650;</span></button> -->
     <!-- <Footer /> -->
     <script>
       import "../scripts/main.js";
@@ -29,7 +29,7 @@ const { pageTitle } = Astro.props;
 </html>
 
 <style>
-.back-to-top {
+  .back-to-top {
     opacity: 0;
     position: fixed;
     bottom: 20px;
@@ -47,9 +47,7 @@ const { pageTitle } = Astro.props;
     background-color: rgba(255, 255, 255, 0.8);
   }
 
- .back-to-top.show {
+  .back-to-top.show {
     opacity: 1;
- }
-
+  }
 </style>
-
