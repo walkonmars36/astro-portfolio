@@ -73,7 +73,7 @@ const tags = [
 <style></style>
 
 <script define:vars={{ tags }}>
-  let blogPosts = document.querySelectorAll("section[data-tags]");
+  let blogPosts = document.querySelectorAll("article[data-tags]");
   console.log("Initial blogPosts: ", blogPosts); // To see the initial blogPosts nodes
   let filters = document.querySelectorAll("input");
   console.log("Initial filters: ", filters); // To see the initial filter checkboxes
