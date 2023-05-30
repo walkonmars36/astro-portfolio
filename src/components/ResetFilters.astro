@@ -1,7 +1,9 @@
 ---
 ---
 
-<button class="btn uppercase flex font-xs-step-2" id="reset-btn">Reset Filters</button>
+<button class="btn uppercase flex font-xs-step-2" id="reset-btn"
+  >Reset Filters</button
+>
 
 <style>
   #reset-btn {
@@ -12,8 +14,14 @@
     margin: 1rem 0;
   }
 
-  #reset-btn:hover, #reset-btn:focus {
+  #reset-btn:hover,
+  #reset-btn:focus {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
     background-color: #0e4a3b;
+  }
+
+  #reset-btn:active {
     box-shadow: 0 0 0 0.125rem var(--clr-green);
   }
 </style>

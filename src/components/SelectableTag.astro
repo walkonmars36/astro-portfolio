@@ -2,9 +2,8 @@
 const { name } = Astro.props;
 ---
 
-<input type="checkbox" name={name} id={name} />
 <label for={name} class="uppercase flex font-xs-step-2" id="filter"
-  >{name}</label
+  >{name}<input type="checkbox" name={name} id={name} /></label
 >
 
 <style>
@@ -16,11 +15,18 @@ const { name } = Astro.props;
     border-radius: 0.5rem;
   }
 
-  input[type="checkbox"] {
+  label > input[type="checkbox"] {
     display: none;
   }
 
-  input[type="checkbox"]:checked + label {
+  label:hover,
+  label:focus-within {
+    background-color: #0e4a3b;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  label:has(input[type="checkbox"]:checked) {
     box-shadow: 0 0 0 0.125rem var(--clr-green);
   }
 </style>
