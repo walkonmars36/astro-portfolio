@@ -7,16 +7,19 @@ import ContactMe from "../components/ContactMe.astro";
 <BaseLayout>
   <section class="container space-xl">
     <section class="flex space-between align-center">
-      <h1 class="animate-left">Projects</h1>
-      <span class="animate-right">
+      <h1>Projects</h1>
+      <span>
         <ContactMe />
       </span>
     </section>
     <div class="two-columns">
       {
         projectData.map(({ id, title, images, tech }) => (
-          <div class="project animate-up space-xl">
-            <a href={`/project-detail/${id}`}> <img src={images.small} alt={title} /></a>
+          <div class="project  space-xl">
+            <a href={`/project-detail/${id}`}>
+              {" "}
+              <img src={images.small} alt={title} />
+            </a>
             <h3 class="space-s">{title}</h3>
             <ul class="flex" role="list">
               {tech.map((item) => (
@@ -31,7 +34,6 @@ import ContactMe from "../components/ContactMe.astro";
         ))
       }
     </div>
-   
   </section>
 </BaseLayout>
 
@@ -44,10 +46,7 @@ import ContactMe from "../components/ContactMe.astro";
     flex-direction: column;
     align-items: center;
     text-align: center;
-
   }
-
- 
 
   @media (min-width: 760px) {
     .project {
@@ -61,4 +60,3 @@ import ContactMe from "../components/ContactMe.astro";
     }
   }
 </style>
-

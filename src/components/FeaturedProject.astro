@@ -5,25 +5,23 @@ const { id, images, title, tech } = projectData[0];
 ---
 
 <section class="container space-xl-2xl">
-  <h2 class="animate-up uppercase">Featured Project</h2>
+  <h2 class="uppercase">Featured Project</h2>
   <div class="project">
-    <img class="space-l animate-up" src={images.small} alt={title} />
+    <img class="space-l" src={images.small} alt={title} />
     <div class="project__content">
       <h3 class="space-s uppercase">{title}</h3>
       <ul class="flex" role="list">
-        {tech.map((item) => <li class="uppercase animate-right font-m-step-1 ">{item}</li>)}
+        {tech.map((item) => <li class="uppercase  font-m-step-1 ">{item}</li>)}
       </ul>
       <div class="project__links uppercase space-s flex">
-        <a class="animate-left" href={`/project-detail/${id}`}>View Project</a>
-        <a class="animate-right" href="/">View Code</a>
+        <a href={`/project-detail/${id}`}>View Project</a>
+        <a href="/">View Code</a>
       </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
-
-
   @media (min-width: 760px) {
     .project {
       display: grid;
@@ -32,14 +30,10 @@ const { id, images, title, tech } = projectData[0];
       margin-top: var(--space-l);
 
       &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
-
-    }
-
- 
-   
   }
 </style>

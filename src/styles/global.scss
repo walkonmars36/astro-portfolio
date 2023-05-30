@@ -52,30 +52,3 @@ html.light {
 .dark a {
   color: var(--clr-green);
 }
-
-
-// Animate Up //
-
-.animate-up, .animate-left, .animate-right {
-  opacity: 0;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
- 
-  }
-
-
-.animate-up { 
-  transform: translateY(3rem);
-}
-
-.animate-left {
-  transform: translateX(-3rem);
-}
-
-.animate-right {
-  transform: translateX(3rem);
-}
-
-.animate-up.is-visible, .animate-left.is-visible, .animate-right.is-visible{
-  opacity: 1;
-  transform: translateX(0) translateY(0);
-}
