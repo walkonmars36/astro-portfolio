@@ -52,3 +52,16 @@ html.light {
 .dark a {
   color: var(--clr-green);
 }
+
+// animation fade-in
+
+.animate-this {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease-in-out;
+}
+
+.animate-this--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}

@@ -29,7 +29,7 @@ if (backToTopButton !== null) {
   backToTopButton.addEventListener("click", scrollToTop);
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 400) {
       backToTopButton.classList.add("show");
     } else {
       backToTopButton.classList.remove("show");
@@ -42,3 +42,26 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+// Animations //
+
+const allSections = document.querySelectorAll(".animate-this");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("animate-this--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.5,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("animate-this--hidden");
+});
