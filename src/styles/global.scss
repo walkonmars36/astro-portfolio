@@ -58,6 +58,7 @@ html.light {
 .animation {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: 0.5s;
   transition: all 1s ease-in-out;
 }
 

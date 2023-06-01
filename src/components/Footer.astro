@@ -2,15 +2,21 @@
 import Social from "./Social.astro";
 ---
 
+<footer class="flex column justify-center align-center space-l">
+  <p>MarkLawson <span>&copy; {new Date().getFullYear()}</span></p>
+  <div class="social-links">
+    <Social platform="linkedin" username="in/mark-lawson-001/" />
+    <Social platform="github" username="walkonmars36" />
+  </div>
+</footer>
+
 <style>
   footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+    border-top: 1px solid var(--clr-lilac);
+    padding: var(--space-l) 0;
+  }
+
+  span {
+    font-size: var(--step--2);
   }
 </style>
-
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-</footer>
