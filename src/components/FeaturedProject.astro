@@ -4,16 +4,16 @@ import projectData from "../data/project-data.json";
 const { id, images, title, tech } = projectData[0];
 ---
 
-<section class="container space-xl-2xl">
+<section class="container space-xl-2xl mgn-btm-l">
   <h2 class="uppercase animate-this">Featured Project</h2>
   <div class="project">
     <img class="space-l animate-this" src={images.small} alt={title} />
-    <div class="project__content">
-      <h3 class="space-s uppercase animate-this">{title}</h3>
-      <ul class="flex animate-this" role="list">
+    <div class="project__content animate-this">
+      <h3 class="space-s uppercase">{title}</h3>
+      <ul class="flex" role="list">
         {tech.map((item) => <li class="uppercase  font-m-step-1 ">{item}</li>)}
       </ul>
-      <div class="project__links uppercase space-s flex animate-this">
+      <div class="project__links uppercase space-s flex">
         <a href={`/project-detail/${id}`}>View Project</a>
         <a href="/">View Code</a>
       </div>

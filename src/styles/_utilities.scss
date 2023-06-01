@@ -47,8 +47,6 @@
   margin-inline: auto;
 }
 
-
-
 // margins //
 
 .space-xs {
@@ -73,6 +71,10 @@
 
 .space-xl-2xl {
   margin-top: var(--space-xl-2xl);
+}
+
+.mgn-btm-l {
+  margin-bottom: var(--space-l);
 }
 
 /////  Text ////

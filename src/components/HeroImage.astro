@@ -6,7 +6,7 @@ import profileTablet from "/assets/images/image-profile-tablet.png";
 import profileDesktop from "/assets/images/image-profile-desktop.png";
 ---
 
-<picture class="slide">
+<picture class="fade">
   <source media="(max-width: 425px)" srcset={profileMobile} type="image/png" />
 
   <source
@@ -21,18 +21,17 @@ import profileDesktop from "/assets/images/image-profile-desktop.png";
 </picture>
 
 <style lang="scss">
-  @keyframes slideIn {
+  @keyframes fadeIn {
     0% {
-      transform: translateX(500px) scale(0.2);
+      opacity: 0;
     }
     100% {
-      transform: translateX(0px) scale(1);
+      opacity: 1;
     }
   }
 
-  .slide {
-    width: 100%;
-    animation: slideIn 1s ease-in-out;
+  .fade {
+    animation: fadeIn 3s ease-in-out;
   }
 
   @media (max-width: 425px) {
