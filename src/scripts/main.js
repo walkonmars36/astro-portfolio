@@ -45,23 +45,22 @@ function scrollToTop() {
 
 // Animations //
 
-const allSections = document.querySelectorAll(".animate-this");
+const animations = document.querySelectorAll(".animation");
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
   console.log(entry);
 
   if (!entry.isIntersecting) return;
-  entry.target.classList.remove("animate-this--hidden");
+  entry.target.classList.remove("animation--hidden");
   observer.unobserve(entry.target);
 };
 
 const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  // threshold: 1,
+  threshold: 0.5,
 });
 
-allSections.forEach(function (section) {
+animations.forEach(function (section) {
   sectionObserver.observe(section);
-  section.classList.add("animate-this--hidden");
+  section.classList.add("animation--hidden");
 });
