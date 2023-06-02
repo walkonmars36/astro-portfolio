@@ -16,8 +16,8 @@ const { title, description, images, tech } = Astro.props;
 
 <BaseLayout>
   <main class="container space-xl">
-    <h1>{title}</h1>
-    <img class="space-l" src={images.small} alt={title} />
+    <h1 class="underline">{title}</h1>
+    <img class="space-xl" src={images.small} alt={title} />
     <div class="project-links space-s flex">
       <a href="/">View Live Site</a>
       <a href="/">View Code</a>
