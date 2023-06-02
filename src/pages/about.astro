@@ -4,49 +4,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Mark from "/assets/images/mark.webp";
 
 const pageTitle = "About Me";
-
-const skills = [
-  {
-    name: "HTML",
-    icon: "",
-    experience: "5 + years",
-  },
-  {
-    name: "CSS",
-    icon: "",
-    experience: "5 + years",
-  },
-  {
-    name: "JavaScript",
-    icon: "",
-    experience: "3 years",
-  },
-  {
-    name: "React",
-    icon: "",
-    experience: "2 years",
-  },
-  {
-    name: "Nextjs",
-    icon: "",
-    experience: "6 months",
-  },
-  {
-    name: "Astro",
-    icon: "",
-    experience: "6 months",
-  },
-  {
-    name: "WordPress",
-    icon: "",
-    experience: "5 + years",
-  },
-  {
-    name: "Accessibility",
-    icon: "",
-    experience: "6 months",
-  },
-];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -111,16 +68,6 @@ const skills = [
           environmental agencies.
         </p>
       </div>
-      <h2 class="space-xl">Skills</h2>
-      <ul class="skills-list space-l">
-        {
-          skills.map((skill) => (
-            <li class="skills-list-item flex column">
-              {skill.name} <span>{skill.experience}</span>
-            </li>
-          ))
-        }
-      </ul>
     </main>
   </div>
 
@@ -143,27 +90,6 @@ const skills = [
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-      grid-gap: 1rem;
-
-      &-item {
-        padding: 0.5rem;
-        border: 1px solid var(--clr-lilac);
-        border-radius: 0.5rem;
-        text-align: center;
-        font-size: var(--step-2);
-        font-weight: 700;
-      }
-    }
-
-    span {
-      font-size: var(--step-0);
-      font-weight: 300;
-      opacity: 0.8;
     }
 
     .last-parag::after {
