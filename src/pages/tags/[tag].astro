@@ -31,12 +31,13 @@ const { posts } = Astro.props;
         <a href="/blog/">Blog /</a>
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Posts tagged - {selectedTag}
+        {selectedTag}
       </li>
     </ul>
   </nav>
 
   <main class="container">
+    <h1 class="space-xl underline">Posts tagged - {selectedTag}</h1>
     <ul>
       {
         posts.map((post) => (
