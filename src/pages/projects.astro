@@ -5,14 +5,14 @@ import ContactMe from "../components/ContactMe.astro";
 ---
 
 <BaseLayout>
-  <section class="container space-xl">
+  <div class="page container space-xl">
     <section class="flex space-between align-center">
       <h1>Projects</h1>
       <span>
         <ContactMe />
       </span>
     </section>
-    <div class="two-columns">
+    <main class="two-columns">
       {
         projectData.map(({ id, title, images, tech }) => (
           <div class="project  space-xl">
@@ -33,13 +33,13 @@ import ContactMe from "../components/ContactMe.astro";
           </div>
         ))
       }
-    </div>
-  </section>
+    </main>
+  </div>
 </BaseLayout>
 
 <style>
-  h2 {
-    text-align: center;
+  .page {
+    max-width: 60rem;
   }
   .project {
     display: flex;

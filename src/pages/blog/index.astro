@@ -34,43 +34,53 @@ const tags = [
   description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   Type="Article"
 >
-  <main class="container space-xl">
+  <div class="page container space-xl">
     <h1>Neque sodales ut etiam sit amet</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-
-    <h2 class="space-xl">Filter By Tags:</h2>
-    <ResetFilters />
-
-    <ul class="flex wrap">{tags.map((tag) => <SelectableTag name={tag} />)}</ul>
-    <section>
-      {
-        allPosts.map((post) => (
-          <BlogPost
-            date={new Date(post.frontmatter.pubDate).toLocaleDateString(
-              "en-GB",
-              {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              }
-            )}
-            class="blog-post"
-            url={post.url}
-            title={post.frontmatter.title}
-            description={post.frontmatter.description}
-            tags={post.frontmatter.tags}
-            image={post.frontmatter.image.url}
-          />
-        ))
-      }
-    </section>
-  </main>
+    <main>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <section class="space-xl">
+        <h2>Filter By Tags:</h2>
+        <ResetFilters />
+        <ul class="flex wrap">
+          {tags.map((tag) => <SelectableTag name={tag} />)}
+        </ul>
+      </section>
+      <section class="space-xl">
+        <h2>All Posts</h2>
+        {
+          allPosts.map((post) => (
+            <BlogPost
+              date={new Date(post.frontmatter.pubDate).toLocaleDateString(
+                "en-GB",
+                {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                }
+              )}
+              class="blog-post"
+              url={post.url}
+              title={post.frontmatter.title}
+              description={post.frontmatter.description}
+              tags={post.frontmatter.tags}
+              image={post.frontmatter.image.url}
+            />
+          ))
+        }
+      </section>
+    </main>
+  </div>
 </BaseLayout>
 
-<style></style>
+<style>
+  .page {
+    width: 100%;
+    max-width: 60rem;
+  }
+</style>
 
 <script define:vars={{ tags }}>
   let blogPosts = document.querySelectorAll("article[data-tags]");

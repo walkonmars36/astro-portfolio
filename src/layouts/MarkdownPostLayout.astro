@@ -1,17 +1,17 @@
 ---
-
 import BaseLayout from "./BaseLayout.astro";
-const {frontmatter} = Astro.props;
-const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
-
+const { frontmatter } = Astro.props;
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
+  "en-GB",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+);
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-
   <nav class="container space-l" aria-label="breadcrumb">
     <ul class="breadcrumb flex" role="list">
       <li class="breadcrumb-item">
@@ -22,33 +22,39 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", 
       </li>
     </ul>
   </nav>
-<main class="container space-l">
-  
-    <h1>{frontmatter.title}</h1>
-    <p>Published on: {formattedDate}</p>
-    <p>Written by {frontmatter.author}</p>
-    <div class="uppercase flex wrap space-m">
-      {
-        frontmatter.tags.map((tag) => (
-          <a href={`/tags/${tag}`}>
-            <p class="tag font-xs-step-2">{tag}</p>
-          </a>
-        ))
-      }
-    </div>
-    <img class="space-l" src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-    <div class="space-m"><slot /></div>
-    
-    
-</main>
+  <main class="container space-l">
+    <article>
+      <h1>{frontmatter.title}</h1>
+      <p>Published on: {formattedDate}</p>
+      <p>Written by {frontmatter.author}</p>
+      <div class="uppercase flex wrap space-m">
+        {
+          frontmatter.tags.map((tag) => (
+            <a href={`/tags/${tag}`}>
+              <p class="tag font-xs-step-2">{tag}</p>
+            </a>
+          ))
+        }
+      </div>
+      <img
+        class="space-l"
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+      />
+      <div class="space-m markdown"><slot /></div>
+    </article>
+  </main>
 </BaseLayout>
 
 <style>
- 
- .breadcrumb {
-  --gap: 0.5em;
- }
+  .breadcrumb {
+    --gap: 0.5em;
+  }
 
+  .page {
+    width: 100%;
+    max-width: 60rem;
+  }
 
   .tag {
     cursor: pointer;
@@ -57,7 +63,9 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString("en-GB", 
     border-radius: 0.5rem;
   }
 
-  .tag:hover, .tag:focus, .tag:active {
+  .tag:hover,
+  .tag:focus,
+  .tag:active {
     box-shadow: 0 0 0 0.125rem var(--clr-green);
   }
 </style>

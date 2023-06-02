@@ -2,59 +2,50 @@
 const { date, url, title, description, tags, image } = Astro.props;
 ---
 
+<article data-tags={tags} class="blog-item">
+  <a href={url}> <img src={image} alt={title} /></a>
+  <h3 class="blog-title">{title}</h3>
 
-  <article data-tags={tags} class="blog-item">
-    
-      <a href={url}>
-        <img src={image} alt={title} /></a>
-        <h3 class="blog-title">{title}</h3>
-       
-        <time class="space-xs" datetime={date}>{date}</time>
-      
-      
+  <time class="space-xs" datetime={date}>{date}</time>
 
-      <div class="space-s">{description}</div>
-      <a class="read-more space-s" href={url}>Read More ...</a>
-   
-  </article>
+  <p class="space-s">{description}</p>
+  <a class="read-more space-s" href={url}>Read More ...</a>
+</article>
 
+<style>
+  li {
+    list-style-type: none;
+  }
 
-  <style>
-    li {
-      list-style-type: none;
-    }
+  time {
+    display: inline-block;
+  }
 
-    time {
-      display: inline-block;
-    }
+  .blog-item {
+    margin-top: var(--space-2xl);
+  }
 
-    .blog-item {
-      margin-top: var(--space-2xl);
-    }
+  .blog-title {
+    margin-top: var(--space-m);
+  }
 
-    .blog-title {
-      margin-top: var(--space-m);
-    }
+  .post-title {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
 
-    .post-title {
-      margin: 0.25em;
-      border: dotted 1px #a1a1a1;
-      border-radius: 0.5em;
-      padding: 0.5em 1em;
-      font-size: 1.15em;
-      background-color: #f8fcfd;
-    }
+  .read-more {
+    display: inline-block;
+  }
 
-    .read-more {
-      display: inline-block;
-    }
-
-    article::after {
-        content: '';
-        display: block;
-        border-bottom: 1px solid var(--clr-lilac);
-        margin-top: var(--space-2xl);
-    }
-
-  </style>
-
+  article:not(:last-child)::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid var(--clr-lilac);
+    margin-top: var(--space-2xl);
+  }
+</style>

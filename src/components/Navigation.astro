@@ -24,6 +24,10 @@
     transform: translateX(100%);
     transition: transform ease-in-out 0.5s;
 
+    @media (min-width: 40rem) {
+      inset: 0 0 0 50%;
+    }
+
     & * a {
       font-size: var(--step-2);
     }

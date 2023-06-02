@@ -2,7 +2,7 @@
 ---
 
 <button id="themeToggle">
-  <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <svg class="theme" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="sun"
       fill-rule="evenodd"
@@ -20,6 +20,8 @@
   #themeToggle {
     border: 0;
     background: none;
+    width: var(--step-3);
+    cursor: pointer;
   }
   .sun {
     fill: black;
@@ -41,31 +43,35 @@
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
+    return "dark"; // dark is now the default mode
   })();
 
+  const themeToggle = document.getElementById("themeToggle");
+
   if (theme === "light") {
-    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+    themeToggle.title = "Switch to Dark Mode";
   } else {
     document.documentElement.classList.add("dark");
+    themeToggle.title = "Switch to Light Mode";
   }
 
   window.localStorage.setItem("theme", theme);
 
   const handleToggleClick = () => {
     const element = document.documentElement;
-    element.classList.toggle("dark");
-
     const isDark = element.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
 
-    isDark ? element.classList.remove("light") : element.classList.add("light");
+    element.classList.toggle("dark");
+    element.classList.toggle("light");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
+
+    if (isDark) {
+      themeToggle.title = "Switch to Dark Mode";
+    } else {
+      themeToggle.title = "Switch to Light Mode";
+    }
   };
 
-  document
-    .getElementById("themeToggle")
-    .addEventListener("click", handleToggleClick);
+  themeToggle.addEventListener("click", handleToggleClick);
 </script>

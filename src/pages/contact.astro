@@ -32,9 +32,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <style lang="scss">
   .page {
     margin-top: var(--space-xl);
+    // max-width: 50rem;
 
     &__text {
       text-align: center;
+    }
+
+    @media (min-width: 56rem) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3xl);
+
+      &__text {
+        text-align: left;
+      }
     }
   }
   form {
