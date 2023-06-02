@@ -24,8 +24,8 @@ const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
   </nav>
   <main class="container space-l">
     <article>
-      <h1>{frontmatter.title}</h1>
-      <p>Published on: {formattedDate}</p>
+      <h1 class="underline">{frontmatter.title}</h1>
+      <p class="space-m">Published on: {formattedDate}</p>
       <p>Written by {frontmatter.author}</p>
       <div class="uppercase flex wrap space-m">
         {

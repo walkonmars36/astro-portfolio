@@ -35,21 +35,21 @@ const tags = [
   Type="Article"
 >
   <div class="page container space-xl">
-    <h1>Neque sodales ut etiam sit amet</h1>
+    <h1 class="underline">Blog</h1>
     <main>
-      <p>
+      <p class="space-m">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <section class="space-xl">
-        <h2>Filter By Tags:</h2>
+        <h2 class="inline-b underline">Filter By Tags:</h2>
         <ResetFilters />
         <ul class="flex wrap">
           {tags.map((tag) => <SelectableTag name={tag} />)}
         </ul>
       </section>
       <section class="space-xl">
-        <h2>All Posts</h2>
+        <h2 class="underline inline-b">Posts</h2>
         {
           allPosts.map((post) => (
             <BlogPost

@@ -4,10 +4,10 @@ import projectData from "../data/project-data.json";
 const { id, images, title, tech } = projectData[0];
 ---
 
-<section class="container space-xl-2xl mgn-btm-l">
-  <h2 class="uppercase animation">Featured Project</h2>
+<section class="featured container space-xl-2xl">
+  <h2 class="uppercase animation underline">Featured Project</h2>
   <div class="project">
-    <img class="space-l animation" src={images.small} alt={title} />
+    <img class="animation" src={images.small} alt={title} />
     <div class="project__content animation">
       <h3 class="space-s uppercase">{title}</h3>
       <ul class="flex" role="list">
@@ -22,6 +22,18 @@ const { id, images, title, tech } = projectData[0];
 </section>
 
 <style lang="scss">
+  .featured {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .project {
+    margin-top: var(--space-m);
+    &__content {
+      padding: 2em;
+      background-color: var(--clr-lilac);
+      margin-top: var(--space-m);
+    }
+  }
   @media (min-width: 760px) {
     .project {
       display: grid;
@@ -33,6 +45,11 @@ const { id, images, title, tech } = projectData[0];
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 0;
+      }
+
+      &__links {
+        margin-top: auto;
       }
     }
   }

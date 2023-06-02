@@ -5,8 +5,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
   <main class="container page">
     <section class="page__text">
-      <h1>Contact Me</h1>
-      <p>
+      <h1 class="underline">Contact Me</h1>
+      <p class="space-m">
         I would love to hear about your project and how I could help. Please
         fill in the form, and I’ll get back to you as soon as possible.
       </p>
@@ -22,7 +22,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
       <p>
         <label for="message">Message</label>
-        <textarea class="input" name="message" rows="5"></textarea>
+        <textarea class="input" name="message" id="message" rows="5"></textarea>
       </p>
       <button class="submit btn" type="submit">Send</button>
     </form>
@@ -45,6 +45,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       &__text {
         text-align: left;
+        margin-top: var(--space-l);
       }
     }
   }

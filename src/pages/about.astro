@@ -7,8 +7,8 @@ const pageTitle = "About Me";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="page container space-xl">
-    <h1>About Me</h1>
+  <div class="page container space-xl padding-btm-2xl">
+    <h1 class="underline">About Me</h1>
     <main class="main centred">
       <div class="about-me__content">
         <section class="section-1">
@@ -73,7 +73,6 @@ const pageTitle = "About Me";
 
   <style lang="scss">
     p {
-      margin-top: var(--space-l);
       max-width: 75ch;
     }
 
@@ -92,27 +91,26 @@ const pageTitle = "About Me";
       justify-content: space-between;
     }
 
-    .last-parag::after {
-      content: "";
-      display: block;
-      border-bottom: 1px solid var(--clr-lilac);
-      padding: var(--space-l) 0;
-    }
-
     .mark-img {
       float: left;
-      margin-right: 4rem;
+      margin-right: var(--space-m-l);
     }
 
     .mark-img2 {
       float: right;
-      margin-left: 4rem;
+      margin-left: var(--space-m-l);
     }
 
     img {
       width: clamp(6.25rem, 2.679rem + 17.857vw, 18.75rem);
       border-radius: 50%;
       shape-outside: circle(50%);
+    }
+
+    @media (min-width: 47rem) {
+      p {
+        margin-top: var(--space-l);
+      }
     }
   </style>
 </BaseLayout>

@@ -3,10 +3,10 @@ import HeroImage from "../components/HeroImage.astro";
 import ContactMe from "../components/ContactMe.astro";
 ---
 
-<section class="container hero">
+<section class="container hero divider padding-btm-2xl">
   <HeroImage />
   <div class="hero__content">
-    <h1 class="space-m animation">Hi, I'm Mark</h1>
+    <h1 class="space-m animation underline">Hi, I'm Mark</h1>
     <p class="space-s animation">
       Based in Bristol, UK. I’m an aspiring front-end developer, who, while lost
       in music, is also now lost in code. I’m driven to produce excellent things
@@ -26,8 +26,6 @@ import ContactMe from "../components/ContactMe.astro";
 
   .hero {
     margin-top: var(--space-l-xl);
-    border-bottom: 1px solid var(--clr-lilac);
-    padding-bottom: var(--space-l-xl);
   }
 
   a {
@@ -49,7 +47,6 @@ import ContactMe from "../components/ContactMe.astro";
       align-items: center;
       justify-items: center;
       gap: 2rem;
-      border-bottom: 1px solid var(--clr-lilac);
     }
 
     .hero__content {
