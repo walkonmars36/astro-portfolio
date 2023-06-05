@@ -84,19 +84,29 @@
   /* Space s-l: 16px → 40px */
   --space-s-l: clamp(1rem, calc(0.48rem + 2.61vw), 2.5rem);
 
-  // COLOURS
+  /// COLOURS ///
 
-  --clr-dark: hsl(269, 33%, 12%); // 269, 33%, 12%
+  // Dark Theme Colours
+  --clr-dark-purple: hsl(269, 33%, 12%); // 269, 33%, 12%
   --clr-grey: hsl(264, 13%, 30%); // 0, 0%, 16%
   --clr-white: hsl(0 0% 89%); // 0 0% 89%
   --clr-green: hsl(171, 77%, 64%);
   --clr-lilac: hsl(266, 22%, 21%);
-  --clr-lilac-bright: hsl(266, 22%, 31%);
+  --clr-dark-green-bg: hsl(176, 69%, 20%);
+  --clr-dark-green-bg-hvr: hsl(165, 68%, 17%);
 
-  // FORM STYLING
-  --input-background: var(--clr-dark);
+  // Dark Theme Form Styling
+  --input-background: var(--clr-dark-purple);
   --input-border: var(--clr-grey);
   --input-focus-h: 264;
   --input-focus-s: 13%;
   --input-focus-l: 80%;
+
+  // Dark Theme Variables
+  --clr-bg-dark: var(--clr-dark-purple);
+  --clr-secondary-dark: var(--clr-lilac);
+  --clr-primary-font-dark: var(--clr-white);
+  --clr-links-dark: var(--clr-green);
+  --clr-filter-bg-dark: var(--clr-dark-green-bg);
+  --clr-filter-bg-hvr-dark: var(--clr-dark-green-bg-hvr);
 }

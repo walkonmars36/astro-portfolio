@@ -18,7 +18,7 @@
     flex-direction: column;
     inset: 0 0 0 30%;
     position: fixed;
-    background: var(--clr-lilac);
+    background: var(--clr-secondary);
     z-index: 100;
     padding: min(10rem, 15vh) 2rem;
     transform: translateX(100%);
@@ -42,12 +42,3 @@
     margin-bottom: auto;
   }
 </style>
-
-<script>
-  const listItems = document.querySelectorAll(".primary-navigation li a");
-
-  listItems.forEach((item, index) => {
-    const listItem = item as HTMLElement;
-    listItem.style.transitionDelay = `${index * 0.2}s`;
-  });
-</script>

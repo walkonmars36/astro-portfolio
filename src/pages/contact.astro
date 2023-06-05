@@ -5,7 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
   <main class="container page">
     <section class="page__text">
-      <h1 class="underline">Contact Me</h1>
+      <h1 class="underline inline-b">Contact Me</h1>
       <p class="space-m">
         I would love to hear about your project and how I could help. Please
         fill in the form, and I’ll get back to you as soon as possible.
@@ -90,16 +90,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   button.submit {
     background-color: var(--clr-green);
-    color: var(--clr-dark);
+    color: var(--clr-dark-purple);
     border-radius: 4px;
     padding: 0.5em 0;
     font-size: 1.25rem;
     font-weight: 500;
-    border: 2px solid var(--clr-dark);
+    border: 2px solid var(--clr-dark-purple);
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: var(--clr-dark);
+      background-color: var(--clr-dark-purple);
       color: var(--clr-green);
       border: 2px solid var(--clr-green);
     }

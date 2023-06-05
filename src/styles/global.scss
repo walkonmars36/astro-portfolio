@@ -44,17 +44,25 @@ p {
 }
 
 html.dark {
-  background-color: var(--clr-dark);
-  color: var(--clr-white);
+  --clr-bg: var(--clr-bg-dark);
+  --clr-secondary: var(--clr-secondary-dark);
+  --clr-primary-font: var(--clr-primary-font-dark);
+  --clr-links: var(--clr-links-dark);
+  --clr-filter-shadow: var(--clr-green);
+  --clr-filter-bg: var(--clr-filter-bg-dark);
+  --clr-filter-bg-hvr: var(--clr-filter-bg-hvr-dark);
+
+  background-color: var(--clr-bg);
+  color: var(--clr-primary-font);
+
+  & a {
+    color: var(--clr-links);
+  }
 }
 
 html.light {
   background-color: #d9d9d9;
   color: #242424;
-}
-
-.dark a {
-  color: var(--clr-green);
 }
 
 // animation fade-in

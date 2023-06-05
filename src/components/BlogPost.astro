@@ -4,7 +4,7 @@ const { date, url, title, description, tags, image } = Astro.props;
 
 <article data-tags={tags} class="blog-item">
   <a href={url}> <img src={image} alt={title} /></a>
-  <h3 class="blog-title">{title}</h3>
+  <h3 class="blog__post-title">{title}</h3>
 
   <time class="space-xs" datetime={date}>{date}</time>
 
@@ -25,17 +25,8 @@ const { date, url, title, description, tags, image } = Astro.props;
     margin-top: var(--space-2xl);
   }
 
-  .blog-title {
+  .blog__post-title {
     margin-top: var(--space-m);
-  }
-
-  .post-title {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
   }
 
   .read-more {
@@ -45,7 +36,7 @@ const { date, url, title, description, tags, image } = Astro.props;
   article:not(:last-child)::after {
     content: "";
     display: block;
-    border-bottom: 1px solid var(--clr-lilac);
+    border-bottom: 1px solid var(--clr-secondary);
     margin-top: var(--space-2xl);
   }
 </style>

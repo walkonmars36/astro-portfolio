@@ -10,7 +10,7 @@ const { name } = Astro.props;
   label {
     user-select: none;
     cursor: pointer;
-    background-color: #105651;
+    background-color: var(--clr-filter-bg);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
   }
@@ -21,12 +21,12 @@ const { name } = Astro.props;
 
   label:hover,
   label:focus-within {
-    background-color: #0e4a3b;
+    background-color: var(--clr-filter-bg-hvr);
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
   }
 
   label:has(input[type="checkbox"]:checked) {
-    box-shadow: 0 0 0 0.125rem var(--clr-green);
+    box-shadow: 0 0 0 0.125rem var(--clr-filter-shadow);
   }
 </style>
