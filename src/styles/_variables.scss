@@ -96,17 +96,18 @@
   --clr-dark-green-bg-hvr: hsl(165, 68%, 17%);
 
   // Dark Theme Form Styling
-  --input-background: var(--clr-dark-purple);
-  --input-border: var(--clr-grey);
-  --input-focus-h: 264;
-  --input-focus-s: 13%;
-  --input-focus-l: 80%;
+  --input-background-dark: var(--clr-dark-purple);
+  --input-grey-dark: var(--clr-grey);
+  --input-focus-h-dark: 264;
+  --input-focus-s-dark: 13%;
+  --input-focus-l-dark: 80%;
 
   // Dark Theme Variables
   --clr-bg-dark: var(--clr-dark-purple);
   --clr-secondary-dark: var(--clr-lilac);
   --clr-primary-font-dark: var(--clr-white);
   --clr-links-dark: var(--clr-green);
+  --clr-btn-bg-dark: var(--clr-green);
   --clr-filter-bg-dark: var(--clr-dark-green-bg);
   --clr-filter-bg-hvr-dark: var(--clr-dark-green-bg-hvr);
 }

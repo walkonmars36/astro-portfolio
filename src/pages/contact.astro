@@ -64,12 +64,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     padding: 0.25em 0.5em;
     background-color: var(--input-background);
     border: none;
-    border-bottom: 2px solid var(--input-border);
+    border-bottom: 2px solid var(--input-grey);
     outline: transparent;
   }
 
   .input:focus {
-    background-color: var(--clr-grey);
+    background-color: var(--input-grey);
     border-color: hsl(
       var(--input-focus-h),
       var(--input-focus-s),
@@ -89,19 +89,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   button.submit {
-    background-color: var(--clr-green);
-    color: var(--clr-dark-purple);
+    background-color: var(--clr-btn-bg);
+    color: var(--clr-bg);
     border-radius: 4px;
     padding: 0.5em 0;
     font-size: 1.25rem;
     font-weight: 500;
-    border: 2px solid var(--clr-dark-purple);
+    border: 2px solid var(--clr-bg);
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
-      background-color: var(--clr-dark-purple);
-      color: var(--clr-green);
-      border: 2px solid var(--clr-green);
+      background-color: var(--clr-bg);
+      color: var(--clr-btn-bg);
+      border: 2px solid var(--clr-btn-bg);
     }
   }
 </style>

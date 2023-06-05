@@ -48,9 +48,16 @@ html.dark {
   --clr-secondary: var(--clr-secondary-dark);
   --clr-primary-font: var(--clr-primary-font-dark);
   --clr-links: var(--clr-links-dark);
+  --clr-btn-bg: var(--clr-btn-bg-dark);
   --clr-filter-shadow: var(--clr-green);
   --clr-filter-bg: var(--clr-filter-bg-dark);
   --clr-filter-bg-hvr: var(--clr-filter-bg-hvr-dark);
+
+  --input-background: var(--input-background-dark);
+  --input-grey: var(--input-grey-dark);
+  --input-focus-h: var(--input-focus-h-dark);
+  --input-focus-s: var(--input-focus-s-dark);
+  --input-focus-l: var(--input-focus-l-dark);
 
   background-color: var(--clr-bg);
   color: var(--clr-primary-font);
