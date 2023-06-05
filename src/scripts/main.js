@@ -8,16 +8,18 @@ const navToggle = document.querySelector(".nav-toggle");
 navToggle.addEventListener("click", function () {
   navToggle.classList.toggle("close");
 
-  const isVisible = nav.getAttribute("data-visible");
+  const navIsOpen = nav.getAttribute("data-visible");
 
-  if (isVisible === "true") {
+  if (navIsOpen === "true") {
     nav.setAttribute("data-visible", "false");
     navToggle.setAttribute("aria-label", "Open Menu");
     navToggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("no-scroll"); // Enable scrolling
   } else {
     nav.setAttribute("data-visible", "true");
     navToggle.setAttribute("aria-label", "Close Menu");
     navToggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("no-scroll"); // Disable scrolling
   }
 });
 

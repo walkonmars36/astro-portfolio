@@ -72,6 +72,11 @@ html.light {
   color: #242424;
 }
 
+// No scroll when nav is open
+.no-scroll {
+  overflow: hidden;
+}
+
 // animation fade-in
 
 .animation {
