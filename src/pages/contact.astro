@@ -55,7 +55,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       text-align: end;
     }
     .error-text {
-      // display: none;
+      display: none;
       color: var(--clr-error);
     }
 
@@ -98,6 +98,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     );
   }
 
+  .input.error {
+    border-bottom: 2px solid var(--clr-error);
+  }
+
   .input:not(textarea) {
     line-height: 1;
     height: 2.25rem;
@@ -126,3 +130,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
 </style>
+
+<script>
+  function validateEmail(email) {
+    const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    return regex.test(email);
+  }
+
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const nameInput = document.getElementById("name") as HTMLInputElement;
+  const emailInput = document.getElementById("email") as HTMLInputElement;
+  const nameError = document.getElementById("name-error") as HTMLSpanElement;
+  const emailError = document.getElementById("email-error") as HTMLSpanElement;
+
+  nameInput.addEventListener("blur", () => {
+    if (!nameInput.value) {
+      nameInput.classList.add("error");
+      nameError.style.display = "block";
+    } else {
+      nameInput.classList.remove("error");
+      nameError.style.display = "none";
+    }
+  });
+
+  emailInput.addEventListener("blur", () => {
+    if (!validateEmail(emailInput.value)) {
+      emailInput.classList.add("error");
+      emailError.style.display = "block";
+    } else {
+      emailInput.classList.remove("error");
+      emailError.style.display = "none";
+    }
+  });
+
+  form.addEventListener("submit", (e) => {
+    if (!nameInput.value || !validateEmail(emailInput.value)) {
+      e.preventDefault();
+      alert("Please correct the errors and try again.");
+    }
+  });
+</script>
