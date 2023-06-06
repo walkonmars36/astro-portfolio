@@ -86,6 +86,8 @@
 
   /// COLOURS ///
 
+  --clr-error: hsl(7, 100%, 68%);
+
   // Dark Theme Colours
   --clr-dark-purple: hsl(269, 33%, 12%); // 269, 33%, 12%
   --clr-grey: hsl(264, 13%, 30%); // 0, 0%, 16%
@@ -104,10 +106,44 @@
 
   // Dark Theme Variables
   --clr-bg-dark: var(--clr-dark-purple);
+  --clr-bg-header-dark: var(--clr-dark-purple);
+  --clr-bg-footer-dark: var(--clr-dark-purple);
   --clr-secondary-dark: var(--clr-lilac);
   --clr-primary-font-dark: var(--clr-white);
   --clr-links-dark: var(--clr-green);
+  --clr-underline-dark: var(--clr-green);
   --clr-btn-bg-dark: var(--clr-green);
   --clr-filter-bg-dark: var(--clr-dark-green-bg);
   --clr-filter-bg-hvr-dark: var(--clr-dark-green-bg-hvr);
+
+  // Light Theme Colours
+  --clr-light-purple: #fefefe;
+  --clr-light-grey: hsl(0, 0%, 98%); // 0, 0%, 98%
+  --clr-light-green: hsl(165, 68%, 17%);
+  --clr-light-lilac: hsl(269, 33%, 12%);
+  --clr-light-green-bg: hsl(165, 68%, 17%);
+  --clr-light-green-bg-hvr: hsl(165, 68%, 63%);
+  --clr-light-grey-bg: hsl(0, 0%, 98%);
+  --clr-light-grey-bg-hvr: hsl(0, 0%, 95%);
+
+  // Light Theme Form Styling
+  --input-background-light: var(--clr-light-purple);
+  --input-grey-light: var(--clr-light-grey);
+  --input-focus-h-light: 0;
+  --input-focus-s-light: 0%;
+  --input-focus-l-light: 95%;
+  --input-focus-border-light: var(--clr-light-green-bg);
+
+  // Light Theme Variables
+  --clr-bg-light: hsl(0, 0%, 99%);
+  --clr-bg-header-light: var(--clr-dark-purple);
+  --clr-bg-footer-light: var(--clr-dark-purple);
+  --clr-mark-hdr-light: var(--clr-white);
+  --clr-secondary-light: hsl(165, 68%, 17%);
+  --clr-primary-font-light: #535e6b;
+  --clr-links-light: var(--clr-green);
+  --clr-underline-light: hsl(165, 68%, 17%);
+  --clr-btn-bg-light: hsl(165, 68%, 63%);
+  --clr-filter-bg-light: var(--clr-dark-green-bg);
+  --clr-filter-bg-hvr-light: var(--clr-dark-green-bg-hvr);
 }

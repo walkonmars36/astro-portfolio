@@ -15,6 +15,10 @@ const { name } = Astro.props;
     border-radius: 0.5rem;
   }
 
+  :global(.light) label {
+    color: var(--clr-white);
+  }
+
   label > input[type="checkbox"] {
     display: none;
   }

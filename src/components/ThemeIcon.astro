@@ -24,17 +24,17 @@
     cursor: pointer;
   }
   .sun {
-    fill: black;
+    fill: transparent;
   }
   .moon {
-    fill: transparent;
+    fill: var(--clr-white);
   }
 
-  :global(.dark) .sun {
-    fill: transparent;
+  :global(.light) .sun {
+    fill: gold;
   }
-  :global(.dark) .moon {
-    fill: white;
+  :global(.light) .moon {
+    fill: transparent;
   }
 </style>
 

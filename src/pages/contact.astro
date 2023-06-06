@@ -11,14 +11,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         fill in the form, and I’ll get back to you as soon as possible.
       </p>
     </section>
-    <form name="contact" action="/success" method="post" data-netlify="true">
+    <form
+      id="contact-form"
+      name="contact"
+      action="/success"
+      method="post"
+      data-netlify="true"
+    >
       <p>
         <label for="name">Name</label>
         <input class="input" type="text" name="name" id="name" />
+        <span id="name-error" class="error-text font-xs-step-2"
+          >Name is required</span
+        >
       </p>
       <p>
         <label for="email">Email</label>
         <input class="input" type="email" name="email" id="email" />
+        <span id="email-error" class="error-text font-xs-step-2"
+          >Email is not valid</span
+        >
       </p>
       <p>
         <label for="message">Message</label>
@@ -36,6 +48,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     &__text {
       text-align: center;
+    }
+
+    span {
+      display: block;
+      text-align: end;
+    }
+    .error-text {
+      // display: none;
+      color: var(--clr-error);
     }
 
     @media (min-width: 56rem) {

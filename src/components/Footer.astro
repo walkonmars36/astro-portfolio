@@ -17,10 +17,15 @@ const year = new Date().getFullYear();
     border-top: 1px solid var(--clr-secondary);
     padding: var(--space-xl) 0;
     flex-direction: column;
+    background-color: var(--clr-bg-footer);
   }
 
   p {
     font-size: var(--step-2);
+  }
+
+  :global(.light) p {
+    color: var(--clr-white);
   }
 
   span {
