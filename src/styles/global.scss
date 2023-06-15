@@ -33,10 +33,12 @@ a {
   text-decoration: none;
   position: relative;
   transition: transform 0.3s;
+  display: inline-block;
 }
 
 a:hover,
-a:focus {
+a:focus,
+a:active {
   transform: scale(1.05);
 }
 
@@ -52,7 +54,8 @@ a::after {
 }
 
 a:hover::after,
-a:focus::after {
+a:focus::after,
+a:active::after {
   width: 100%;
 }
 
