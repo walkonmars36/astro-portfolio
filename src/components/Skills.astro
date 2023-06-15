@@ -52,7 +52,7 @@ const skills = [
     {
       skills.map((skill) => (
         <>
-          <li class="skills-list-item flex column  align-center">
+          <li class="skills-list-item flex column  align-center border-radius-2">
             <Icon name={skill.icon} class="skills-list-icon" />
             {skill.name} <span>{skill.experience}</span>
           </li>
@@ -71,7 +71,6 @@ const skills = [
 
       &-item {
         background-color: var(--clr-secondary);
-        border-radius: 0.5rem;
         font-size: var(--step-2);
         font-weight: 700;
         padding: 0.7em;

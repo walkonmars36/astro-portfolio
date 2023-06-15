@@ -84,6 +84,12 @@
   /* Space s-l: 16px → 40px */
   --space-s-l: clamp(1rem, calc(0.48rem + 2.61vw), 2.5rem);
 
+  // Border Radius Values //
+  --border-radius-1: 0.25rem;
+  --border-radius-2: 0.5rem;
+  --border-radius-3: 0.75rem;
+  --border-radius-4: 1rem;
+
   /// COLOURS ///
 
   --clr-error: hsl(7, 100%, 68%);
