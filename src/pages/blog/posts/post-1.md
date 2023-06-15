@@ -1,9 +1,9 @@
 ---
 layout: ../../../layouts/MarkdownPostLayout.astro
-title: "My First Blog Post"
-pubDate: 15-6-2023
-description: "This is the first post of my new Astro blog."
-author: "Astro Learner"
+title: "Markdown - A Cheat Sheet "
+pubDate: 2023-06-15
+description: "This is a blog post with all the necessary markdown rules."
+author: "Mark"
 image:
   url: "/assets/images/markdown-image.png"
   alt: "The Markdown logo in green."

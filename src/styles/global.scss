@@ -33,13 +33,7 @@ a {
   text-decoration: none;
   position: relative;
   transition: transform 0.3s;
-  display: inline-block;
-}
-
-a:hover,
-a:focus,
-a:active {
-  transform: scale(1.05);
+  overflow: hidden;
 }
 
 a::after {
@@ -50,12 +44,16 @@ a::after {
   width: 0;
   height: 0.1em;
   background-color: var(--clr-links);
-  transition: width 0.3s;
+  transition: all 0.3s;
 }
 
-a:hover::after,
-a:focus::after,
-a:active::after {
+a.hover,
+a.active {
+  transform: scale(1.05);
+}
+
+a.hover::after,
+a.active::after {
   width: 100%;
 }
 
