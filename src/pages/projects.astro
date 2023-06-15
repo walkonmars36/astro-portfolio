@@ -11,9 +11,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       {
         projectData.map(({ id, title, images, tech, code }) => (
           <div class="project  space-xl">
-            <a href={`/project-detail/${id}`}>
-              {" "}
-              <img src={images.small} alt={title} />
+            <a href={`/project-detail/${id} `}>
+              <img src={images.small} alt={title} title="View Project" />
             </a>
             <h3 class="space-s">{title}</h3>
             <ul class="flex" role="list">
