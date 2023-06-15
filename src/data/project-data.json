@@ -3,6 +3,8 @@
     "id": "planets-fact-site",
     "title": "Planets Fact Site",
     "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
+    "url": "https://planet-facts-site-wom.netlify.app/",
+    "code": "https://github.com/walkonmars36/astro-planet-fact-site",
     "images": {
       "small": "/assets/images/thumbnail-planets-small.webp",
       "large": "/assets/images/thumbnail-planets-large.webp"
@@ -13,30 +15,12 @@
     "id": "todo-app",
     "title": "Todo App",
     "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
+    "url": "https://next-todo-app-wom.netlify.app/",
+    "code": "https://github.com/walkonmars36/next-todo-app",
     "images": {
       "small": "/assets/images/thumbnail-todo-small.webp",
       "large": "/assets/images/thumbnail-todo-large.webp"
     },
     "tech": ["React", "SCSS", "Nextjs"]
-  },
-  {
-    "id": "galleria",
-    "title": "Galleria",
-    "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
-    "images": {
-      "small": "/assets/images/thumbnail-galleria-small.webp",
-      "large": "/assets/images/thumbnail-galleria-large.webp"
-    },
-    "tech": ["Astro", "SCSS", "Javascript", "Preact"]
-  },
-  {
-    "id": "entertainment-app",
-    "title": "Entertainment App",
-    "description": "Minim ex quis laboris cillum qui laboris culpa. Laborum ut exercitation elit enim cupidatat proident dolore sit non duis duis Lorem laboris laborum. Minim duis veniam veniam enim proident dolor Lorem incididunt amet Lorem. Veniam tempor aliqua nulla consequat culpa enim consequat ea elit velit mollit. Enim non adipisicing adipisicing consectetur non exercitation et. Laborum proident nisi nulla amet. Lorem aute eu fugiat adipisicing minim cupidatat eu reprehenderit aute aliquip dolore ex laboris.",
-    "images": {
-      "small": "/assets/images/thumbnail-entertainment-small.webp",
-      "large": "/assets/images/thumbnail-entertainment-large.webp"
-    },
-    "tech": ["Nextjs", "SCSS", "Javascript"]
   }
 ]

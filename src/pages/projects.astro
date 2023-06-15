@@ -1,20 +1,15 @@
 ---
 import projectData from "../data/project-data.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactMe from "../components/ContactMe.astro";
 ---
 
 <BaseLayout>
   <div class="page container space-xl">
-    <section class="flex space-between align-center">
-      <h1 class="underline">Projects</h1>
-      <span>
-        <ContactMe />
-      </span>
-    </section>
+    <h1 class="underline">Projects</h1>
+
     <main class="two-columns">
       {
-        projectData.map(({ id, title, images, tech }) => (
+        projectData.map(({ id, title, images, tech, code }) => (
           <div class="project  space-xl">
             <a href={`/project-detail/${id}`}>
               {" "}
@@ -28,7 +23,9 @@ import ContactMe from "../components/ContactMe.astro";
             </ul>
             <div class="project__links space-s flex space-around">
               <a href={`/project-detail/${id}`}>View Project</a>
-              <a href="/">View Code</a>
+              <a href={code} target="_blank">
+                View Code
+              </a>
             </div>
           </div>
         ))

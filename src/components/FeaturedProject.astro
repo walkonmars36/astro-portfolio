@@ -1,7 +1,7 @@
 ---
 import projectData from "../data/project-data.json";
 
-const { id, images, title, tech } = projectData[0];
+const { id, images, title, code, tech } = projectData[0];
 ---
 
 <section class="featured container space-xl-2xl">
@@ -15,7 +15,7 @@ const { id, images, title, tech } = projectData[0];
       </ul>
       <div class="project__links uppercase space-s flex">
         <a href={`/project-detail/${id}`}>View Project</a>
-        <a href="/">View Code</a>
+        <a href={code} target="_blank">View Code</a>
       </div>
     </div>
   </div>

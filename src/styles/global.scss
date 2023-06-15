@@ -42,7 +42,7 @@ p {
   max-width: 65ch;
 }
 
-html.dark {
+:root {
   --clr-bg: var(--clr-bg-dark);
   --clr-bg-header: var(--clr-bg-header-dark);
   --clr-bg-footer: var(--clr-bg-footer-dark);
@@ -60,34 +60,6 @@ html.dark {
   --input-focus-h: var(--input-focus-h-dark);
   --input-focus-s: var(--input-focus-s-dark);
   --input-focus-l: var(--input-focus-l-dark);
-
-  background-color: var(--clr-bg);
-  color: var(--clr-primary-font);
-
-  & a {
-    color: var(--clr-links);
-  }
-}
-
-html.light {
-  --clr-bg: var(--clr-bg-light);
-  --clr-bg-header: var(--clr-bg-header-light);
-  --clr-bg-footer: var(--clr-bg-footer-light);
-  --clr-mark-hdr: var(--clr-mark-hdr-light);
-  --clr-secondary: hsl(266, 22%, 21%);
-  --clr-primary-font: var(--clr-primary-font-light);
-  --clr-links: var(--clr-links-light);
-  --clr-underline: var(--clr-underline-light);
-  --clr-btn-bg: var(--clr-btn-bg-light);
-  --clr-filter-shadow: var(--clr-green);
-  --clr-filter-bg: var(--clr-filter-bg-light);
-  --clr-filter-bg-hvr: var(--clr-filter-bg-hvr-light);
-
-  --input-background: var(--input-background-light);
-  --input-grey: var(--input-grey-light);
-  --input-focus-h: var(--input-focus-h-light);
-  --input-focus-s: var(--input-focus-s-light);
-  --input-focus-l: var(--input-focus-l-light);
 
   background-color: var(--clr-bg);
   color: var(--clr-primary-font);

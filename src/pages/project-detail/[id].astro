@@ -3,15 +3,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import projectData from "../../data/project-data.json";
 
 export async function getStaticPaths() {
-  return projectData.map(({ id, title, description, images, tech }) => {
-    return {
-      params: { id },
-      props: { title, description, images, tech },
-    };
-  });
+  return projectData.map(
+    ({ id, title, description, images, url, code, tech }) => {
+      return {
+        params: { id },
+        props: { title, description, url, code, images, tech },
+      };
+    }
+  );
 }
 
-const { title, description, images, tech } = Astro.props;
+const { title, description, images, url, code, tech } = Astro.props;
 ---
 
 <BaseLayout>
@@ -19,8 +21,8 @@ const { title, description, images, tech } = Astro.props;
     <h1 class="underline">{title}</h1>
     <img class="space-xl" src={images.small} alt={title} />
     <div class="project-links space-s flex">
-      <a href="/">View Live Site</a>
-      <a href="/">View Code</a>
+      <a href={url} target="_blank">View Live Site</a>
+      <a href={code} target="_blank">View Code</a>
     </div>
     <p class="space-l">{description}</p>
     <ul class="flex space-l">
